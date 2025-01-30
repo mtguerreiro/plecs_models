@@ -47,7 +47,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [508, 338; 1357, 726]
+    Location      [1071, 302; 1920, 690]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -56,11 +56,11 @@ Plecs {
       Type          ConfigurableSubsystem
       Name          "Virtual\nsync. boost"
       Show          on
-      Position      [125, 80]
+      Position      [125, 75]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-55, -35; 55, 35]
+      Frame         [-55, -30; 55, 30]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -114,15 +114,6 @@ Plecs {
         TabName       ""
       }
       Parameter {
-        Variable      "R_load"
-        Prompt        "Load resistance (Ohm)"
-        Type          FreeText
-        Value         "22"
-        Show          off
-        Tunable       off
-        TabName       ""
-      }
-      Parameter {
         Variable      "f_pwm"
         Prompt        "Switching frequency (Hz)"
         Type          FreeText
@@ -140,33 +131,75 @@ Plecs {
         Tunable       off
         TabName       ""
       }
+      Parameter {
+        Variable      "load_model"
+        Prompt        "Load model"
+        Type          FixedText
+        PossibleValues {"resistive", "cpl"}
+        Value         "1"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Parameter {
+        Variable      "R_load"
+        Prompt        "Load resistance (Ohm)"
+        Type          FreeText
+        Value         "22"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Parameter {
+        Variable      "v_thres"
+        Prompt        "Voltage threshold for CPL (V)"
+        Type          FreeText
+        Value         "10"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Parameter {
+        Variable      "fc"
+        Prompt        "CPL bandwidth (Hz)"
+        Type          FreeText
+        Value         "1e3"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
       Terminal {
         Type          Input
-        Position      [-55, 5]
+        Position      [-55, 20]
         Direction     left
       }
       Terminal {
         Type          Output
-        Position      [59, -25]
+        Position      [59, -20]
         Direction     right
       }
       Terminal {
         Type          Output
-        Position      [59, 15]
+        Position      [59, 20]
         Direction     right
       }
       Terminal {
         Type          Input
-        Position      [-55, -15]
+        Position      [-55, -20]
         Direction     left
       }
       Terminal {
         Type          Output
-        Position      [59, -5]
+        Position      [59, 0]
         Direction     right
       }
-      TerminalNames { "d", "il", "vo", "v_in", "io" }
-      Location      [716, 187; 1493, 740]
+      Terminal {
+        Type          Input
+        Position      [-55, 0]
+        Direction     left
+      }
+      TerminalNames { "d", "il", "vo", "v_in", "io", "po" }
+      Location      [882, 292; 1798, 845]
       ZoomFactor    1
       SliderPosition [0, 0]
       ShowBrowser   off
@@ -178,7 +211,7 @@ Plecs {
             Type          Input
             Name          "d"
             Show          on
-            Position      [60, 65]
+            Position      [60, 110]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -330,7 +363,7 @@ Plecs {
             Type          Goto
             Name          "Goto1"
             Show          off
-            Position      [115, 65]
+            Position      [115, 110]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -834,7 +867,7 @@ Plecs {
             Type          From
             Name          "From10"
             Show          off
-            Position      [245, 495]
+            Position      [240, 510]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -850,34 +883,10 @@ Plecs {
             }
           }
           Component {
-            Type          Gain
-            Name          "Gain2"
-            Show          on
-            Position      [285, 495]
-            Direction     right
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "K"
-              Value         "1 / R_load"
-              Show          off
-            }
-            Parameter {
-              Variable      "Multiplication"
-              Value         "1"
-              Show          off
-            }
-            Parameter {
-              Variable      "DataType"
-              Value         "10"
-              Show          off
-            }
-          }
-          Component {
             Type          Goto
             Name          "Goto7"
             Show          off
-            Position      [330, 495]
+            Position      [420, 500]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -890,6 +899,104 @@ Plecs {
               Variable      "Visibility"
               Value         "2"
               Show          off
+            }
+          }
+          Component {
+            Type          From
+            Name          "From11"
+            Show          off
+            Position      [240, 490]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "po"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "2"
+              Show          off
+            }
+          }
+          Component {
+            Type          Input
+            Name          "po"
+            Show          on
+            Position      [60, 70]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Index"
+              Value         "6"
+              Show          on
+            }
+            Parameter {
+              Variable      "Width"
+              Value         "-1"
+              Show          off
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto3"
+            Show          off
+            Position      [115, 70]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "po"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "2"
+              Show          off
+            }
+          }
+          Component {
+            Type          Reference
+            SrcComponent  "Load models/Virtual load\\nmodel"
+            Name          "Virtual load\nmodel"
+            Show          on
+            Position      [330, 500]
+            Direction     up
+            Flipped       off
+            LabelPosition none
+            Frame         [-55, -20; 55, 20]
+            Parameter {
+              Variable      "R_load"
+              Value         "R_load"
+              Show          off
+            }
+            Parameter {
+              Variable      "v_thres"
+              Value         "v_thres"
+              Show          off
+            }
+            Parameter {
+              Variable      "Configuration"
+              Value         "load_model"
+              Show          off
+            }
+            Terminal {
+              Type          Output
+              Position      [59, 0]
+              Direction     right
+            }
+            Terminal {
+              Type          Input
+              Position      [-55, 10]
+              Direction     left
+            }
+            Terminal {
+              Type          Input
+              Position      [-55, -10]
+              Direction     left
             }
           }
           Connection {
@@ -1053,16 +1160,30 @@ Plecs {
           }
           Connection {
             Type          Signal
+            SrcComponent  "From11"
+            SrcTerminal   1
+            DstComponent  "Virtual load\nmodel"
+            DstTerminal   3
+          }
+          Connection {
+            Type          Signal
             SrcComponent  "From10"
             SrcTerminal   1
-            DstComponent  "Gain2"
+            DstComponent  "Virtual load\nmodel"
+            DstTerminal   2
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "Virtual load\nmodel"
+            SrcTerminal   1
+            DstComponent  "Goto7"
             DstTerminal   1
           }
           Connection {
             Type          Signal
-            SrcComponent  "Gain2"
-            SrcTerminal   2
-            DstComponent  "Goto7"
+            SrcComponent  "po"
+            SrcTerminal   1
+            DstComponent  "Goto3"
             DstTerminal   1
           }
         }
@@ -1175,20 +1296,6 @@ Plecs {
             }
           }
           Component {
-            Type          Resistor
-            Name          "R1"
-            Show          on
-            Position      [635, 395]
-            Direction     up
-            Flipped       off
-            LabelPosition east
-            Parameter {
-              Variable      "R"
-              Value         "R_load"
-              Show          off
-            }
-          }
-          Component {
             Type          Voltmeter
             Name          "Vm1"
             Show          on
@@ -1285,7 +1392,7 @@ Plecs {
             Type          Input
             Name          "d"
             Show          on
-            Position      [60, 65]
+            Position      [60, 110]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -1304,7 +1411,7 @@ Plecs {
             Type          Goto
             Name          "Goto1"
             Show          off
-            Position      [115, 65]
+            Position      [115, 110]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -1688,6 +1795,109 @@ Plecs {
               Show          off
             }
           }
+          Component {
+            Type          Input
+            Name          "po"
+            Show          on
+            Position      [60, 70]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Index"
+              Value         "6"
+              Show          on
+            }
+            Parameter {
+              Variable      "Width"
+              Value         "-1"
+              Show          off
+            }
+          }
+          Component {
+            Type          From
+            Name          "From11"
+            Show          off
+            Position      [750, 370]
+            Direction     left
+            Flipped       off
+            LabelPosition north
+            Parameter {
+              Variable      "Tag"
+              Value         "po"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "2"
+              Show          off
+            }
+          }
+          Component {
+            Type          Goto
+            Name          "Goto7"
+            Show          off
+            Position      [115, 70]
+            Direction     right
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "Tag"
+              Value         "po"
+              Show          off
+            }
+            Parameter {
+              Variable      "Visibility"
+              Value         "2"
+              Show          off
+            }
+          }
+          Component {
+            Type          Reference
+            SrcComponent  "Load models/Load\\nmodel"
+            Name          "Load\nmodel"
+            Show          on
+            Position      [680, 390]
+            Direction     up
+            Flipped       off
+            LabelPosition none
+            Frame         [-40, -40; 40, 40]
+            Parameter {
+              Variable      "R_load"
+              Value         "R_load"
+              Show          off
+            }
+            Parameter {
+              Variable      "v_thres"
+              Value         "v_thres"
+              Show          off
+            }
+            Parameter {
+              Variable      "fc"
+              Value         "fc"
+              Show          off
+            }
+            Parameter {
+              Variable      "Configuration"
+              Value         "load_model"
+              Show          off
+            }
+            Terminal {
+              Type          Port
+              Position      [-45, 20]
+              Direction     left
+            }
+            Terminal {
+              Type          Port
+              Position      [-45, -20]
+              Direction     left
+            }
+            Terminal {
+              Type          Input
+              Position      [40, -20]
+              Direction     right
+            }
+          }
           Connection {
             Type          Wire
             SrcComponent  "C1"
@@ -1713,8 +1923,8 @@ Plecs {
               }
               Branch {
                 Points        [635, 450]
-                DstComponent  "R1"
-                DstTerminal   2
+                DstComponent  "Load\nmodel"
+                DstTerminal   1
               }
             }
           }
@@ -1794,14 +2004,6 @@ Plecs {
               DstComponent  "Am2"
               DstTerminal   1
             }
-          }
-          Connection {
-            Type          Wire
-            SrcComponent  "Am2"
-            SrcTerminal   2
-            Points        [635, 325]
-            DstComponent  "R1"
-            DstTerminal   1
           }
           Connection {
             Type          Wire
@@ -1896,6 +2098,28 @@ Plecs {
             DstComponent  "V"
             DstTerminal   3
           }
+          Connection {
+            Type          Wire
+            SrcComponent  "Am2"
+            SrcTerminal   2
+            Points        [635, 325]
+            DstComponent  "Load\nmodel"
+            DstTerminal   2
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "From11"
+            SrcTerminal   1
+            DstComponent  "Load\nmodel"
+            DstTerminal   3
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "po"
+            SrcTerminal   1
+            DstComponent  "Goto7"
+            DstTerminal   1
+          }
         }
       }
       Parameter {
@@ -1906,4 +2130,4 @@ Plecs {
     }
   }
 }
-DemoSignature "5wmKHj7JX/z5EmEVqwp5EywaY3FBoE5xdTYCXM1q+hQ="
+DemoSignature "9PcDuoim9G46LZDBoUCz+DqioN7scyUktBpKrlhETJY="
