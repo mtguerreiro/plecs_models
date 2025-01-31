@@ -1,6 +1,6 @@
 Plecs {
   Name          "Controllers"
-  Version       "4.7"
+  Version       "4.8"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
   TimeSpan      "1.0"
@@ -14,15 +14,20 @@ Plecs {
   RelTol        "1e-3"
   AbsTol        "-1"
   TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
   SyncFixedStepTasks "2"
   UseSingleCommonBaseRate "2"
   LossVariableLimitExceededMsg "3"
   NegativeSwitchLossMsg "3"
   DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "2"
+  DatatypeInheritanceConflictMsg "1"
+  ContSampleTimeConflictMsg "1"
   StiffnessDetectionMsg "2"
   MaxConsecutiveZCs "1000"
   AlgebraicLoopWithStateMachineMsg "3"
   AssertionAction "1"
+  FixedPointDatatypeOverride "1"
   InitializationCommands ""
   InitialState  "1"
   SystemState   ""
@@ -38,6 +43,7 @@ Plecs {
   CodeGenTargetSettings ""
   ExtendedMatrixPrecision "1"
   MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "1"
   EnableStateSpaceSplitting "2"
   DisplayStateSpaceSplitting "1"
   DiscretizationMethod "2"
@@ -47,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [1071, 295; 1920, 683]
+    Location      [2686, 246; 3535, 634]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -69,7 +75,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [415, 55; 951, 477]
+        Location      [3096, 109; 3732, 745]
         ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -170,7 +176,7 @@ Plecs {
             Direction     left
           }
           TerminalNames { "u", "vo", "il", "vo*", "v_in", "io" }
-          Location      [848, 93; 1806, 1041]
+          Location      [2508, 71; 3466, 1000]
           ZoomFactor    1
           SliderPosition [0, 0]
           ShowBrowser   off
@@ -239,6 +245,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -261,6 +272,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -287,6 +303,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -311,6 +332,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -333,6 +359,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -378,6 +409,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          From
@@ -419,6 +455,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -508,6 +549,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -530,6 +576,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -556,6 +607,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -578,6 +634,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -667,6 +728,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Product
@@ -689,6 +755,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -979,6 +1050,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -1402,6 +1478,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -1424,6 +1505,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -1450,6 +1536,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -1474,6 +1565,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -1496,6 +1592,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -1541,6 +1642,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          From
@@ -1582,6 +1688,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -1627,6 +1738,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -1649,6 +1765,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -1675,6 +1796,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Sum
@@ -1697,6 +1823,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -1742,6 +1873,11 @@ Plecs {
                   Value         "10"
                   Show          off
                 }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
               }
               Component {
                 Type          Product
@@ -1764,6 +1900,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -1794,6 +1935,7 @@ Plecs {
                 Direction     right
                 Flipped       off
                 LabelPosition south
+                CommentOut    DisabledClosedCircuit
                 Parameter {
                   Variable      "Ts"
                   Value         "ts"
@@ -1903,6 +2045,7 @@ Plecs {
                 Direction     right
                 Flipped       off
                 LabelPosition south
+                CommentOut    DisabledClosedCircuit
                 Parameter {
                   Variable      "Ts"
                   Value         "ts"
@@ -1917,6 +2060,7 @@ Plecs {
                 Direction     right
                 Flipped       off
                 LabelPosition south
+                CommentOut    DisabledClosedCircuit
                 Parameter {
                   Variable      "Ts"
                   Value         "ts"
@@ -1931,6 +2075,7 @@ Plecs {
                 Direction     right
                 Flipped       off
                 LabelPosition south
+                CommentOut    DisabledClosedCircuit
                 Parameter {
                   Variable      "Ts"
                   Value         "ts"
@@ -1945,6 +2090,7 @@ Plecs {
                 Direction     right
                 Flipped       off
                 LabelPosition south
+                CommentOut    DisabledClosedCircuit
                 Parameter {
                   Variable      "Ts"
                   Value         "ts"
@@ -2142,6 +2288,11 @@ Plecs {
                 Parameter {
                   Variable      "DataType"
                   Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
                   Show          off
                 }
               }
@@ -2437,8 +2588,5097 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          ConfigurableSubsystem
+          Name          "Boost energy\ncontrol"
+          Show          on
+          Position      [185, 350]
+          Direction     up
+          Flipped       off
+          LabelPosition none
+          Frame         [-110, -50; 110, 50]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "Energy controller"
+          MaskDescription "Energy-based voltage controller for the boost conve"
+"rter."
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Parameter {
+            Variable      "L"
+            Prompt        "Inductor (H)"
+            Type          FreeText
+            Value         "L"
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "C_out"
+            Prompt        "Capacitor (F)"
+            Type          FreeText
+            Value         "C_out"
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "ts"
+            Prompt        "Sample time (s)"
+            Type          FreeText
+            Value         "ts"
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "ky"
+            Prompt        "Energy gain"
+            Type          FreeText
+            Value         "ky"
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "k_y_dot"
+            Prompt        "Power gain"
+            Type          FreeText
+            Value         "k_y_dot"
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "k_ey"
+            Prompt        "Energy error gain"
+            Type          FreeText
+            Value         "k_ey"
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Terminal {
+            Type          Output
+            Position      [114, 0]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-110, 40]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-110, -20]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-110, -40]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-110, 20]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-110, 0]
+            Direction     left
+          }
+          TerminalNames { "u", "vo", "il", "vo*", "v_in", "io" }
+          Location      [1920, 28; 3840, 897]
+          ZoomFactor    1
+          SliderPosition [0, 0]
+          ShowBrowser   off
+          BrowserWidth  100
+          Configurations {
+            Name          "continuous"
+            Schematic {
+              Component {
+                Type          Goto
+                Name          "Goto"
+                Show          off
+                Position      [100, 155]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Output
+                Name          "u"
+                Show          on
+                Position      [290, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "vo"
+                Show          on
+                Position      [45, 155]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "il"
+                Show          on
+                Position      [45, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto1"
+                Show          off
+                Position      [100, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "vo*"
+                Show          on
+                Position      [45, 195]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "4"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto2"
+                Show          off
+                Position      [100, 195]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From8"
+                Show          off
+                Position      [240, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "u"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto4"
+                Show          off
+                Position      [100, 115]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "v_in"
+                Show          on
+                Position      [45, 115]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "5"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "io"
+                Show          on
+                Position      [45, 75]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "6"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto5"
+                Show          off
+                Position      [100, 75]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "io"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain1"
+                Show          on
+                Position      [180, 320]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "L/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product7"
+                Show          on
+                Position      [120, 320]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From24"
+                Show          off
+                Position      [60, 315]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From25"
+                Show          off
+                Position      [60, 375]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain2"
+                Show          on
+                Position      [180, 380]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "C_out/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product8"
+                Show          on
+                Position      [120, 380]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto19"
+                Show          off
+                Position      [230, 320]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto20"
+                Show          off
+                Position      [230, 380]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From27"
+                Show          off
+                Position      [65, 465]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto23"
+                Show          off
+                Position      [165, 445]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "pi"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From29"
+                Show          off
+                Position      [65, 440]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product10"
+                Show          on
+                Position      [115, 445]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From28"
+                Show          off
+                Position      [65, 535]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "io"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto24"
+                Show          off
+                Position      [165, 515]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "po"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From30"
+                Show          off
+                Position      [65, 510]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product11"
+                Show          on
+                Position      [115, 515]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum11"
+                Show          off
+                Position      [100, 585]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From40"
+                Show          off
+                Position      [65, 585]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "pi"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From41"
+                Show          off
+                Position      [65, 620]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "po"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto25"
+                Show          off
+                Position      [140, 585]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y_dot"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto21"
+                Show          off
+                Position      [185, 705]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          SignalMux
+                Name          "Mux4"
+                Show          off
+                Position      [105, 705]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Width"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum10"
+                Show          off
+                Position      [145, 705]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "+"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From26"
+                Show          off
+                Position      [65, 700]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From34"
+                Show          off
+                Position      [65, 720]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto22"
+                Show          off
+                Position      [120, 670]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Tag"
+                  Value         "energies"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Divide3"
+                Show          on
+                Position      [415, 325]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "*/"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From50"
+                Show          off
+                Position      [365, 340]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto28"
+                Show          off
+                Position      [460, 325]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From52"
+                Show          off
+                Position      [365, 320]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "po"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain17"
+                Show          on
+                Position      [485, 400]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "L/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product12"
+                Show          on
+                Position      [425, 400]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From31"
+                Show          off
+                Position      [365, 395]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From32"
+                Show          off
+                Position      [365, 455]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain18"
+                Show          on
+                Position      [485, 460]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "C_out/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product13"
+                Show          on
+                Position      [425, 460]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto27"
+                Show          off
+                Position      [535, 400]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto29"
+                Show          off
+                Position      [535, 460]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto30"
+                Show          off
+                Position      [490, 560]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          SignalMux
+                Name          "Mux7"
+                Show          off
+                Position      [410, 560]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Width"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum12"
+                Show          off
+                Position      [450, 560]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "+"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From33"
+                Show          off
+                Position      [370, 555]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From36"
+                Show          off
+                Position      [370, 575]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto31"
+                Show          off
+                Position      [425, 525]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Tag"
+                  Value         "energies*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From17"
+                Show          off
+                Position      [665, 560]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto3"
+                Show          off
+                Position      [1015, 595]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v'"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum3"
+                Show          off
+                Position      [840, 595]
+                Direction     up
+                Flipped       on
+                LabelPosition north
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|-+"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From9"
+                Show          off
+                Position      [665, 655]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain3"
+                Show          on
+                Position      [965, 595]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "-L"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From35"
+                Show          off
+                Position      [655, 430]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From37"
+                Show          off
+                Position      [660, 490]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y_dot"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain20"
+                Show          on
+                Position      [715, 490]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "k_y_dot"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain21"
+                Show          on
+                Position      [940, 320]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "k_ey"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From45"
+                Show          off
+                Position      [660, 315]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From55"
+                Show          off
+                Position      [665, 595]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain24"
+                Show          on
+                Position      [780, 595]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "1 / L"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product1"
+                Show          off
+                Position      [715, 595]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|**"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product2"
+                Show          off
+                Position      [715, 655]
+                Direction     up
+                Flipped       on
+                LabelPosition north
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|**"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product3"
+                Show          off
+                Position      [910, 595]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|*/"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum1"
+                Show          off
+                Position      [725, 725]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Constant
+                Name          "Constant2"
+                Show          on
+                Position      [680, 725]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From19"
+                Show          off
+                Position      [680, 765]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v'"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto6"
+                Show          off
+                Position      [760, 725]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "u"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Integrator
+                Name          "Integrator"
+                Show          on
+                Position      [880, 320]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "ExternalReset"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "InitialConditionSource"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "x0"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "ShowStatePort"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "EnableWrapping"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "UpperLimit"
+                  Value         "inf"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "LowerLimit"
+                  Value         "-inf"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum4"
+                Show          off
+                Position      [700, 315]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain22"
+                Show          on
+                Position      [715, 430]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "ky"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum2"
+                Show          off
+                Position      [990, 320]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|--"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum5"
+                Show          off
+                Position      [1040, 320]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto32"
+                Show          off
+                Position      [1085, 320]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain23"
+                Show          on
+                Position      [820, 370]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "-1 / k_ey"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum"
+                Show          off
+                Position      [770, 370]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|++"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "vo"
+                SrcTerminal   1
+                DstComponent  "Goto"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "vo*"
+                SrcTerminal   1
+                DstComponent  "Goto2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "il"
+                SrcTerminal   1
+                DstComponent  "Goto1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From8"
+                SrcTerminal   1
+                DstComponent  "u"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "v_in"
+                SrcTerminal   1
+                DstComponent  "Goto4"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "io"
+                SrcTerminal   1
+                DstComponent  "Goto5"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From24"
+                SrcTerminal   1
+                Points        [85, 315]
+                Branch {
+                  DstComponent  "Product7"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [85, 325]
+                  DstComponent  "Product7"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product7"
+                SrcTerminal   1
+                DstComponent  "Gain1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product8"
+                SrcTerminal   1
+                DstComponent  "Gain2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From25"
+                SrcTerminal   1
+                Points        [85, 375]
+                Branch {
+                  DstComponent  "Product8"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [85, 385]
+                  DstComponent  "Product8"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain1"
+                SrcTerminal   2
+                DstComponent  "Goto19"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain2"
+                SrcTerminal   2
+                DstComponent  "Goto20"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product10"
+                SrcTerminal   1
+                DstComponent  "Goto23"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From27"
+                SrcTerminal   1
+                Points        [80, 465; 80, 450]
+                DstComponent  "Product10"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From29"
+                SrcTerminal   1
+                DstComponent  "Product10"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product11"
+                SrcTerminal   1
+                DstComponent  "Goto24"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From28"
+                SrcTerminal   1
+                Points        [80, 535; 80, 520]
+                DstComponent  "Product11"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From30"
+                SrcTerminal   1
+                DstComponent  "Product11"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From40"
+                SrcTerminal   1
+                DstComponent  "Sum11"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From41"
+                SrcTerminal   1
+                Points        [100, 620]
+                DstComponent  "Sum11"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum11"
+                SrcTerminal   1
+                DstComponent  "Goto25"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum10"
+                SrcTerminal   1
+                DstComponent  "Goto21"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From26"
+                SrcTerminal   1
+                DstComponent  "Mux4"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From34"
+                SrcTerminal   1
+                Points        [85, 720; 85, 710]
+                DstComponent  "Mux4"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Mux4"
+                SrcTerminal   1
+                Points        [120, 705]
+                Branch {
+                  DstComponent  "Sum10"
+                  DstTerminal   2
+                }
+                Branch {
+                  DstComponent  "Goto22"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From50"
+                SrcTerminal   1
+                Points        [385, 340]
+                DstComponent  "Divide3"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Divide3"
+                SrcTerminal   1
+                DstComponent  "Goto28"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From52"
+                SrcTerminal   1
+                DstComponent  "Divide3"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From31"
+                SrcTerminal   1
+                Points        [390, 395]
+                Branch {
+                  DstComponent  "Product12"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [390, 405]
+                  DstComponent  "Product12"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product12"
+                SrcTerminal   1
+                DstComponent  "Gain17"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product13"
+                SrcTerminal   1
+                DstComponent  "Gain18"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From32"
+                SrcTerminal   1
+                Points        [390, 455]
+                Branch {
+                  DstComponent  "Product13"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [390, 465]
+                  DstComponent  "Product13"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain17"
+                SrcTerminal   2
+                DstComponent  "Goto27"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain18"
+                SrcTerminal   2
+                DstComponent  "Goto29"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum12"
+                SrcTerminal   1
+                DstComponent  "Goto30"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From33"
+                SrcTerminal   1
+                DstComponent  "Mux7"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From36"
+                SrcTerminal   1
+                Points        [390, 575; 390, 565]
+                DstComponent  "Mux7"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Mux7"
+                SrcTerminal   1
+                Points        [425, 560]
+                Branch {
+                  DstComponent  "Sum12"
+                  DstTerminal   2
+                }
+                Branch {
+                  DstComponent  "Goto31"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From17"
+                SrcTerminal   1
+                Points        [840, 560]
+                DstComponent  "Sum3"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum3"
+                SrcTerminal   1
+                DstComponent  "Product3"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain3"
+                SrcTerminal   2
+                DstComponent  "Goto3"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From9"
+                SrcTerminal   1
+                DstComponent  "Product2"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From55"
+                SrcTerminal   1
+                Points        [675, 595]
+                Branch {
+                  DstComponent  "Product1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [675, 625; 715, 625]
+                  Branch {
+                    DstComponent  "Product1"
+                    DstTerminal   3
+                  }
+                  Branch {
+                    DstComponent  "Product2"
+                    DstTerminal   3
+                  }
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product1"
+                SrcTerminal   1
+                DstComponent  "Gain24"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain24"
+                SrcTerminal   2
+                DstComponent  "Sum3"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product3"
+                SrcTerminal   1
+                DstComponent  "Gain3"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product2"
+                SrcTerminal   1
+                Points        [910, 655]
+                DstComponent  "Product3"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Constant2"
+                SrcTerminal   1
+                DstComponent  "Sum1"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From19"
+                SrcTerminal   1
+                Points        [725, 765]
+                DstComponent  "Sum1"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum1"
+                SrcTerminal   1
+                DstComponent  "Goto6"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Integrator"
+                SrcTerminal   2
+                DstComponent  "Gain21"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum4"
+                SrcTerminal   1
+                DstComponent  "Integrator"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain21"
+                SrcTerminal   2
+                DstComponent  "Sum2"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum2"
+                SrcTerminal   1
+                DstComponent  "Sum5"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum5"
+                SrcTerminal   1
+                DstComponent  "Goto32"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From37"
+                SrcTerminal   1
+                DstComponent  "Gain20"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From35"
+                SrcTerminal   1
+                Points        [675, 430]
+                Branch {
+                  Points        [675, 375; 700, 375]
+                  DstComponent  "Sum4"
+                  DstTerminal   3
+                }
+                Branch {
+                  DstComponent  "Gain22"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum"
+                SrcTerminal   1
+                DstComponent  "Gain23"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain23"
+                SrcTerminal   2
+                Points        [850, 370]
+                DstComponent  "Integrator"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain22"
+                SrcTerminal   2
+                Points        [745, 430]
+                Branch {
+                  DstComponent  "Sum"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [990, 430]
+                  DstComponent  "Sum2"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain20"
+                SrcTerminal   2
+                Points        [770, 490]
+                Branch {
+                  DstComponent  "Sum"
+                  DstTerminal   3
+                }
+                Branch {
+                  Points        [1040, 490]
+                  DstComponent  "Sum5"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From45"
+                SrcTerminal   1
+                DstComponent  "Sum4"
+                DstTerminal   2
+              }
+            }
+            Name          "discrete"
+            Schematic {
+              Component {
+                Type          Output
+                Name          "u"
+                Show          on
+                Position      [410, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "1"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "vo"
+                Show          on
+                Position      [45, 240]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "2"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "il"
+                Show          on
+                Position      [45, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "3"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "vo*"
+                Show          on
+                Position      [45, 310]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "4"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "v_in"
+                Show          on
+                Position      [45, 170]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "5"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Input
+                Name          "io"
+                Show          on
+                Position      [45, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Index"
+                  Value         "6"
+                  Show          on
+                }
+                Parameter {
+                  Variable      "Width"
+                  Value         "-1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ZeroOrderHold
+                Name          "Zero-Order\nHold"
+                Show          on
+                Position      [115, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Ts"
+                  Value         "ts"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto"
+                Show          off
+                Position      [175, 240]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto1"
+                Show          off
+                Position      [175, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto2"
+                Show          off
+                Position      [175, 310]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto4"
+                Show          off
+                Position      [175, 170]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto5"
+                Show          off
+                Position      [175, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "io"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ZeroOrderHold
+                Name          "Zero-Order\nHold1"
+                Show          on
+                Position      [115, 100]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Ts"
+                  Value         "ts"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ZeroOrderHold
+                Name          "Zero-Order\nHold2"
+                Show          on
+                Position      [115, 170]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Ts"
+                  Value         "ts"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ZeroOrderHold
+                Name          "Zero-Order\nHold3"
+                Show          on
+                Position      [115, 240]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Ts"
+                  Value         "ts"
+                  Show          off
+                }
+              }
+              Component {
+                Type          ZeroOrderHold
+                Name          "Zero-Order\nHold4"
+                Show          on
+                Position      [115, 310]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Ts"
+                  Value         "ts"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Delay
+                Name          "Delay"
+                Show          on
+                Position      [350, 35]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "N"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "X0"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Ts"
+                  Value         "ts"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From15"
+                Show          off
+                Position      [305, 35]
+                Direction     left
+                Flipped       on
+                LabelPosition north
+                Parameter {
+                  Variable      "Tag"
+                  Value         "u"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain1"
+                Show          on
+                Position      [175, 425]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "L/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product7"
+                Show          on
+                Position      [115, 425]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From24"
+                Show          off
+                Position      [55, 420]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From25"
+                Show          off
+                Position      [55, 480]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain2"
+                Show          on
+                Position      [175, 485]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "C_out/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product8"
+                Show          on
+                Position      [115, 485]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto19"
+                Show          off
+                Position      [225, 425]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto20"
+                Show          off
+                Position      [225, 485]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From27"
+                Show          off
+                Position      [60, 570]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto23"
+                Show          off
+                Position      [160, 550]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "pi"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From29"
+                Show          off
+                Position      [60, 545]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product10"
+                Show          on
+                Position      [110, 550]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From28"
+                Show          off
+                Position      [60, 640]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "io"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto24"
+                Show          off
+                Position      [160, 620]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "po"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From30"
+                Show          off
+                Position      [60, 615]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product11"
+                Show          on
+                Position      [110, 620]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum11"
+                Show          off
+                Position      [95, 690]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From40"
+                Show          off
+                Position      [60, 690]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "pi"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From41"
+                Show          off
+                Position      [60, 725]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "po"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto25"
+                Show          off
+                Position      [135, 690]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y_dot"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto21"
+                Show          off
+                Position      [180, 810]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          SignalMux
+                Name          "Mux4"
+                Show          off
+                Position      [100, 810]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Width"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum10"
+                Show          off
+                Position      [140, 810]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "+"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From26"
+                Show          off
+                Position      [60, 805]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From34"
+                Show          off
+                Position      [60, 825]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto22"
+                Show          off
+                Position      [115, 775]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Tag"
+                  Value         "energies"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Divide3"
+                Show          on
+                Position      [410, 430]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "*/"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From50"
+                Show          off
+                Position      [360, 445]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto28"
+                Show          off
+                Position      [455, 430]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From52"
+                Show          off
+                Position      [360, 425]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "po"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain17"
+                Show          on
+                Position      [480, 505]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "L/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product12"
+                Show          on
+                Position      [420, 505]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From31"
+                Show          off
+                Position      [360, 500]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From32"
+                Show          off
+                Position      [360, 560]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain18"
+                Show          on
+                Position      [480, 565]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "C_out/2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product13"
+                Show          on
+                Position      [420, 565]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto27"
+                Show          off
+                Position      [530, 505]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto29"
+                Show          off
+                Position      [530, 565]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto30"
+                Show          off
+                Position      [485, 665]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          SignalMux
+                Name          "Mux7"
+                Show          off
+                Position      [405, 665]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Width"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum12"
+                Show          off
+                Position      [445, 665]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "+"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From33"
+                Show          off
+                Position      [365, 660]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_il*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From36"
+                Show          off
+                Position      [365, 680]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "e_vc*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto31"
+                Show          off
+                Position      [420, 630]
+                Direction     up
+                Flipped       off
+                LabelPosition east
+                Parameter {
+                  Variable      "Tag"
+                  Value         "energies*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From17"
+                Show          off
+                Position      [660, 665]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto3"
+                Show          off
+                Position      [1010, 700]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v'"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum3"
+                Show          off
+                Position      [835, 700]
+                Direction     up
+                Flipped       on
+                LabelPosition north
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|-+"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From9"
+                Show          off
+                Position      [660, 760]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "vo"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain3"
+                Show          on
+                Position      [960, 700]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "-L"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From35"
+                Show          off
+                Position      [650, 535]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From37"
+                Show          off
+                Position      [655, 595]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y_dot"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain20"
+                Show          on
+                Position      [710, 595]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "k_y_dot"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain21"
+                Show          on
+                Position      [970, 425]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "k_ey"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From45"
+                Show          off
+                Position      [655, 420]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "y*"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From55"
+                Show          off
+                Position      [660, 700]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v_in"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain24"
+                Show          on
+                Position      [775, 700]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "1 / L"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product1"
+                Show          off
+                Position      [710, 700]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|**"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product2"
+                Show          off
+                Position      [710, 760]
+                Direction     up
+                Flipped       on
+                LabelPosition north
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|**"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Product
+                Name          "Product3"
+                Show          off
+                Position      [905, 700]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|*/"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum1"
+                Show          off
+                Position      [720, 830]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Constant
+                Name          "Constant2"
+                Show          on
+                Position      [675, 830]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-10, -10; 10, 10]
+                Parameter {
+                  Variable      "Value"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+              }
+              Component {
+                Type          From
+                Name          "From19"
+                Show          off
+                Position      [675, 870]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v'"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto6"
+                Show          off
+                Position      [755, 830]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "u"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum4"
+                Show          off
+                Position      [695, 420]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain22"
+                Show          on
+                Position      [710, 535]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "ky"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum2"
+                Show          off
+                Position      [1020, 425]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|--"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum5"
+                Show          off
+                Position      [1070, 425]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|+-"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Goto
+                Name          "Goto32"
+                Show          off
+                Position      [1115, 425]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "Tag"
+                  Value         "v"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Visibility"
+                  Value         "2"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Gain
+                Name          "Gain23"
+                Show          on
+                Position      [815, 475]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "K"
+                  Value         "-1 / k_ey"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Multiplication"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Sum
+                Name          "Sum"
+                Show          off
+                Position      [765, 475]
+                Direction     up
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "IconShape"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Inputs"
+                  Value         "|++"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataType"
+                  Value         "10"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "DataTypeOverflowMode"
+                  Value         "1"
+                  Show          off
+                }
+              }
+              Component {
+                Type          DiscreteIntegrator
+                Name          "Discrete\nIntegrator"
+                Show          on
+                Position      [895, 425]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "ExternalReset"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "InitialConditionSource"
+                  Value         "2"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "x0"
+                  Value         "0"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "ShowStatePort"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "EnableWrapping"
+                  Value         "1"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "UpperLimit"
+                  Value         "inf"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "LowerLimit"
+                  Value         "-inf"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "IntegrationMethod"
+                  Value         "3"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "SampleTime"
+                  Value         "ts"
+                  Show          off
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "il"
+                SrcTerminal   1
+                DstComponent  "Zero-Order\nHold"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Zero-Order\nHold"
+                SrcTerminal   2
+                DstComponent  "Goto1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "io"
+                SrcTerminal   1
+                DstComponent  "Zero-Order\nHold1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Zero-Order\nHold1"
+                SrcTerminal   2
+                DstComponent  "Goto5"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "v_in"
+                SrcTerminal   1
+                DstComponent  "Zero-Order\nHold2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Zero-Order\nHold2"
+                SrcTerminal   2
+                DstComponent  "Goto4"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "vo"
+                SrcTerminal   1
+                DstComponent  "Zero-Order\nHold3"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Zero-Order\nHold3"
+                SrcTerminal   2
+                DstComponent  "Goto"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "vo*"
+                SrcTerminal   1
+                DstComponent  "Zero-Order\nHold4"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Zero-Order\nHold4"
+                SrcTerminal   2
+                DstComponent  "Goto2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From15"
+                SrcTerminal   1
+                DstComponent  "Delay"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Delay"
+                SrcTerminal   2
+                DstComponent  "u"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From24"
+                SrcTerminal   1
+                Points        [80, 420]
+                Branch {
+                  DstComponent  "Product7"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [80, 430]
+                  DstComponent  "Product7"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product7"
+                SrcTerminal   1
+                DstComponent  "Gain1"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product8"
+                SrcTerminal   1
+                DstComponent  "Gain2"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From25"
+                SrcTerminal   1
+                Points        [80, 480]
+                Branch {
+                  DstComponent  "Product8"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [80, 490]
+                  DstComponent  "Product8"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain1"
+                SrcTerminal   2
+                DstComponent  "Goto19"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain2"
+                SrcTerminal   2
+                DstComponent  "Goto20"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product10"
+                SrcTerminal   1
+                DstComponent  "Goto23"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From27"
+                SrcTerminal   1
+                Points        [75, 570; 75, 555]
+                DstComponent  "Product10"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From29"
+                SrcTerminal   1
+                DstComponent  "Product10"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product11"
+                SrcTerminal   1
+                DstComponent  "Goto24"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From28"
+                SrcTerminal   1
+                Points        [75, 640; 75, 625]
+                DstComponent  "Product11"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From30"
+                SrcTerminal   1
+                DstComponent  "Product11"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From40"
+                SrcTerminal   1
+                DstComponent  "Sum11"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From41"
+                SrcTerminal   1
+                Points        [95, 725]
+                DstComponent  "Sum11"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum11"
+                SrcTerminal   1
+                DstComponent  "Goto25"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum10"
+                SrcTerminal   1
+                DstComponent  "Goto21"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From26"
+                SrcTerminal   1
+                DstComponent  "Mux4"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From34"
+                SrcTerminal   1
+                Points        [80, 825; 80, 815]
+                DstComponent  "Mux4"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Mux4"
+                SrcTerminal   1
+                Points        [115, 810]
+                Branch {
+                  DstComponent  "Sum10"
+                  DstTerminal   2
+                }
+                Branch {
+                  DstComponent  "Goto22"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From50"
+                SrcTerminal   1
+                Points        [380, 445]
+                DstComponent  "Divide3"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Divide3"
+                SrcTerminal   1
+                DstComponent  "Goto28"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From52"
+                SrcTerminal   1
+                DstComponent  "Divide3"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From31"
+                SrcTerminal   1
+                Points        [385, 500]
+                Branch {
+                  DstComponent  "Product12"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [385, 510]
+                  DstComponent  "Product12"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product12"
+                SrcTerminal   1
+                DstComponent  "Gain17"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product13"
+                SrcTerminal   1
+                DstComponent  "Gain18"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From32"
+                SrcTerminal   1
+                Points        [385, 560]
+                Branch {
+                  DstComponent  "Product13"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [385, 570]
+                  DstComponent  "Product13"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain17"
+                SrcTerminal   2
+                DstComponent  "Goto27"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain18"
+                SrcTerminal   2
+                DstComponent  "Goto29"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum12"
+                SrcTerminal   1
+                DstComponent  "Goto30"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From33"
+                SrcTerminal   1
+                DstComponent  "Mux7"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From36"
+                SrcTerminal   1
+                Points        [385, 680; 385, 670]
+                DstComponent  "Mux7"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Mux7"
+                SrcTerminal   1
+                Points        [420, 665]
+                Branch {
+                  DstComponent  "Sum12"
+                  DstTerminal   2
+                }
+                Branch {
+                  DstComponent  "Goto31"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From17"
+                SrcTerminal   1
+                Points        [835, 665]
+                DstComponent  "Sum3"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum3"
+                SrcTerminal   1
+                DstComponent  "Product3"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain3"
+                SrcTerminal   2
+                DstComponent  "Goto3"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From9"
+                SrcTerminal   1
+                DstComponent  "Product2"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From55"
+                SrcTerminal   1
+                Points        [670, 700]
+                Branch {
+                  DstComponent  "Product1"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [670, 730; 710, 730]
+                  Branch {
+                    DstComponent  "Product1"
+                    DstTerminal   3
+                  }
+                  Branch {
+                    DstComponent  "Product2"
+                    DstTerminal   3
+                  }
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product1"
+                SrcTerminal   1
+                DstComponent  "Gain24"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain24"
+                SrcTerminal   2
+                DstComponent  "Sum3"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product3"
+                SrcTerminal   1
+                DstComponent  "Gain3"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product2"
+                SrcTerminal   1
+                Points        [905, 760]
+                DstComponent  "Product3"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Constant2"
+                SrcTerminal   1
+                DstComponent  "Sum1"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From19"
+                SrcTerminal   1
+                Points        [720, 870]
+                DstComponent  "Sum1"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum1"
+                SrcTerminal   1
+                DstComponent  "Goto6"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From45"
+                SrcTerminal   1
+                DstComponent  "Sum4"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum4"
+                SrcTerminal   1
+                DstComponent  "Discrete\nIntegrator"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain21"
+                SrcTerminal   2
+                DstComponent  "Sum2"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum2"
+                SrcTerminal   1
+                DstComponent  "Sum5"
+                DstTerminal   2
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum5"
+                SrcTerminal   1
+                DstComponent  "Goto32"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From37"
+                SrcTerminal   1
+                DstComponent  "Gain20"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "From35"
+                SrcTerminal   1
+                Points        [670, 535]
+                Branch {
+                  Points        [670, 480; 695, 480]
+                  DstComponent  "Sum4"
+                  DstTerminal   3
+                }
+                Branch {
+                  DstComponent  "Gain22"
+                  DstTerminal   1
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Sum"
+                SrcTerminal   1
+                DstComponent  "Gain23"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain23"
+                SrcTerminal   2
+                Points        [845, 475; 845, 430]
+                DstComponent  "Discrete\nIntegrator"
+                DstTerminal   3
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain22"
+                SrcTerminal   2
+                Points        [740, 535]
+                Branch {
+                  DstComponent  "Sum"
+                  DstTerminal   2
+                }
+                Branch {
+                  Points        [1020, 535]
+                  DstComponent  "Sum2"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Gain20"
+                SrcTerminal   2
+                Points        [765, 595]
+                Branch {
+                  DstComponent  "Sum"
+                  DstTerminal   3
+                }
+                Branch {
+                  Points        [1070, 595]
+                  DstComponent  "Sum5"
+                  DstTerminal   3
+                }
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Discrete\nIntegrator"
+                SrcTerminal   2
+                DstComponent  "Gain21"
+                DstTerminal   1
+              }
+            }
+          }
+          Parameter {
+            Variable      "Configuration"
+            Value         "model"
+            Show          off
+          }
+        }
       }
     }
   }
 }
-DemoSignature "OuGbGUTUQR0+x/7IbHadk7q2npbu2Um85kjEf7WYhmw="
