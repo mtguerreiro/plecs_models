@@ -75,7 +75,7 @@ Plecs {
         Value         "15e-6"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "General"
       }
       Parameter {
         Variable      "RL"
@@ -84,7 +84,7 @@ Plecs {
         Value         "10e-3"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Switched model"
       }
       Parameter {
         Variable      "C_out"
@@ -93,7 +93,7 @@ Plecs {
         Value         "100e-6"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "General"
       }
       Parameter {
         Variable      "R_C_out"
@@ -102,7 +102,7 @@ Plecs {
         Value         "20e-3"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Switched model"
       }
       Parameter {
         Variable      "V_out_ini"
@@ -111,7 +111,7 @@ Plecs {
         Value         "0"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "General"
       }
       Parameter {
         Variable      "f_pwm"
@@ -120,7 +120,7 @@ Plecs {
         Value         "100e3"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Switched model"
       }
       Parameter {
         Variable      "R_ds"
@@ -129,7 +129,7 @@ Plecs {
         Value         "20e-3"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Switched model"
       }
       Parameter {
         Variable      "load_model"
@@ -139,7 +139,7 @@ Plecs {
         Value         "1"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Load"
       }
       Parameter {
         Variable      "R_load"
@@ -148,7 +148,7 @@ Plecs {
         Value         "22"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Load"
       }
       Parameter {
         Variable      "v_thres"
@@ -157,7 +157,7 @@ Plecs {
         Value         "10"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Load"
       }
       Parameter {
         Variable      "fc"
@@ -166,7 +166,7 @@ Plecs {
         Value         "1e3"
         Show          off
         Tunable       off
-        TabName       ""
+        TabName       "Load"
       }
       Terminal {
         Type          Input
@@ -2130,4 +2130,4 @@ Plecs {
     }
   }
 }
-DemoSignature "9PcDuoim9G46LZDBoUCz+DqioN7scyUktBpKrlhETJY="
+DemoSignature "+PVHiWdly6kVHd/9dFGwzO5YXN3qVwBmBzp82lqCB/4="
