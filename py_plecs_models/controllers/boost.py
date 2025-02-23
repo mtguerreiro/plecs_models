@@ -18,7 +18,7 @@ def casc_fblin_params(design_params, plant_params, prefix=''):
         raise TypeError('`model` should be `continuous` or `discrete`.')
 
     L = plant_params['L']
-    C = plant_params['C_out']
+    C = plant_params['Co']
 
     zeta_i, wn_i = _zeta_wn(t_settling / 5, os)
     k_ei = - L * wn_i**2
@@ -54,7 +54,7 @@ def energy_params(design_params, plant_params, prefix=''):
         raise TypeError('`model` should be `continuous` or `discrete`.')
 
     L = plant_params['L']
-    C_out = plant_params['C_out']
+    Co = plant_params['Co']
     
     zeta, wn = _zeta_wn(t_settling, os)
 
@@ -75,7 +75,7 @@ def energy_params(design_params, plant_params, prefix=''):
     _params = {
         'ky': K[0], 'k_y_dot': K[1], 'k_ey': K[2],
         'model': model, 'ts': ts,
-        'L': L, 'C_out': C_out
+        'L': L, 'Co': Co
     }
 
     params = _add_key_prefix_dict(_params, prefix)

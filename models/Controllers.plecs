@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [2686, 246; 3535, 634]
+    Location      [1071, 246; 1920, 634]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -75,7 +75,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [3096, 109; 3732, 745]
+        Location      [1284, 109; 1920, 745]
         ZoomFactor    1
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -2616,10 +2616,10 @@ Plecs {
             TabName       ""
           }
           Parameter {
-            Variable      "C_out"
+            Variable      "Co"
             Prompt        "Capacitor (F)"
             Type          FreeText
-            Value         "C_out"
+            Value         "Co"
             Show          off
             Tunable       off
             TabName       ""
@@ -2691,7 +2691,7 @@ Plecs {
             Direction     left
           }
           TerminalNames { "u", "vo", "il", "vo*", "v_in", "io" }
-          Location      [1920, 28; 3840, 897]
+          Location      [1920, 28; 3840, 741]
           ZoomFactor    1
           SliderPosition [0, 0]
           ShowBrowser   off
@@ -3033,7 +3033,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "K"
-                  Value         "C_out/2"
+                  Value         "Co / 2"
                   Show          off
                 }
                 Parameter {
@@ -3688,7 +3688,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "K"
-                  Value         "C_out/2"
+                  Value         "Co / 2"
                   Show          off
                 }
                 Parameter {
@@ -5541,7 +5541,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "K"
-                  Value         "C_out/2"
+                  Value         "Co / 2"
                   Show          off
                 }
                 Parameter {
@@ -6196,7 +6196,7 @@ Plecs {
                 LabelPosition south
                 Parameter {
                   Variable      "K"
-                  Value         "C_out/2"
+                  Value         "Co / 2"
                   Show          off
                 }
                 Parameter {
