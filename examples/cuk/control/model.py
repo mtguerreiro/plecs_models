@@ -29,7 +29,7 @@ def params():
 def plant_params():
 
     V_in = 25
-    Vo_ref = 30
+    Vo_ref = 25
 
     Li = 100e-6
     R_Li = 40e-3
@@ -46,7 +46,7 @@ def plant_params():
     V2_ini = Vo_ref
 
     Co = 330e-6
-    R_Co = 60e-3
+    R_Co = 0.2
     Vo_ini = Vo_ref
     
     f_pwm = 100e3

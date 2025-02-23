@@ -11,8 +11,8 @@ plecs_file = 'cuk_model'
 plecs_file_path = os.path.abspath(os.getcwd())
 
 sim_params = [
-    {'cuk_model':1},
-    {'cuk_model':2}
+    [{'cuk_model':2}, {'ts':2.5e-3, 'os':5, 'model':'discrete'}],
+    [{'cuk_model':1}, {'ts':2.5e-3, 'os':5, 'model':'continuous'}],
     ]
 
 # --- Sim ---
@@ -26,7 +26,7 @@ pm = pu.ui.PlecsModel(
 # Runs simulations
 data  = []
 for sp in sim_params:
-    d = pm.sim(sim_params=sp, close_sim=False)
+    d = pm.sim(sim_params=sp[0], ctl_params=sp[1], close_sim=False)
     data.append(d)
     
 # --- Results ---
