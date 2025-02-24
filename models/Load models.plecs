@@ -730,6 +730,24 @@ Plecs {
         Tunable       off
         TabName       ""
       }
+      Parameter {
+        Variable      "C_cpl"
+        Prompt        "CPL input capacitance (F)"
+        Type          FreeText
+        Value         ""
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Parameter {
+        Variable      "V_cpl_ini"
+        Prompt        "Initial voltage of CPL capacitor (V)"
+        Type          FreeText
+        Value         ""
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
       Terminal {
         Type          Port
         Position      [-45, 20]
@@ -931,7 +949,7 @@ Plecs {
             Type          CurrentSource
             Name          "I"
             Show          on
-            Position      [130, 185]
+            Position      [190, 185]
             Direction     up
             Flipped       on
             LabelPosition west
@@ -950,7 +968,7 @@ Plecs {
             Type          From
             Name          "From9"
             Show          off
-            Position      [400, 175]
+            Position      [460, 175]
             Direction     right
             Flipped       on
             LabelPosition south
@@ -969,7 +987,7 @@ Plecs {
             Type          From
             Name          "From10"
             Show          off
-            Position      [400, 195]
+            Position      [460, 195]
             Direction     right
             Flipped       on
             LabelPosition south
@@ -988,7 +1006,7 @@ Plecs {
             Type          CScript
             Name          "C-Script"
             Show          on
-            Position      [295, 185]
+            Position      [355, 185]
             Direction     down
             Flipped       on
             LabelPosition south
@@ -1106,7 +1124,7 @@ Plecs {
             Type          Constant
             Name          "Constant"
             Show          on
-            Position      [410, 220]
+            Position      [470, 220]
             Direction     right
             Flipped       on
             LabelPosition south
@@ -1126,7 +1144,7 @@ Plecs {
             Type          SignalMux
             Name          "Mux"
             Show          off
-            Position      [360, 185]
+            Position      [420, 185]
             Direction     right
             Flipped       on
             LabelPosition south
@@ -1187,7 +1205,7 @@ Plecs {
             Type          TransferFunction
             Name          "Transfer Fcn"
             Show          on
-            Position      [215, 185]
+            Position      [275, 185]
             Direction     right
             Flipped       on
             LabelPosition south
@@ -1205,6 +1223,25 @@ Plecs {
             Parameter {
               Variable      "X0"
               Value         "0"
+              Show          off
+            }
+          }
+          Component {
+            Type          Capacitor
+            Name          "C1"
+            Show          on
+            Position      [145, 185]
+            Direction     down
+            Flipped       on
+            LabelPosition west
+            Parameter {
+              Variable      "C"
+              Value         "C_cpl"
+              Show          off
+            }
+            Parameter {
+              Variable      "v_init"
+              Value         "V_cpl_ini"
               Show          off
             }
           }
@@ -1226,7 +1263,7 @@ Plecs {
             Type          Signal
             SrcComponent  "From10"
             SrcTerminal   1
-            Points        [380, 195; 380, 185]
+            Points        [440, 195; 440, 185]
             DstComponent  "Mux"
             DstTerminal   3
           }
@@ -1234,18 +1271,26 @@ Plecs {
             Type          Signal
             SrcComponent  "Constant"
             SrcTerminal   1
-            Points        [375, 220]
+            Points        [435, 220]
             DstComponent  "Mux"
             DstTerminal   4
           }
           Connection {
             Type          Wire
-            SrcComponent  "I"
+            SrcComponent  "+"
             SrcTerminal   1
-            Points        [130, 125; 55, 125]
+            Points        [55, 125]
             Branch {
-              DstComponent  "+"
-              DstTerminal   1
+              Points        [145, 125]
+              Branch {
+                Points        [190, 125]
+                DstComponent  "I"
+                DstTerminal   1
+              }
+              Branch {
+                DstComponent  "C1"
+                DstTerminal   1
+              }
             }
             Branch {
               DstComponent  "Vm1"
@@ -1254,12 +1299,20 @@ Plecs {
           }
           Connection {
             Type          Wire
-            SrcComponent  "I"
-            SrcTerminal   2
-            Points        [130, 250; 55, 250]
+            SrcComponent  "-"
+            SrcTerminal   1
+            Points        [55, 250]
             Branch {
-              DstComponent  "-"
-              DstTerminal   1
+              Points        [145, 250]
+              Branch {
+                Points        [190, 250]
+                DstComponent  "I"
+                DstTerminal   2
+              }
+              Branch {
+                DstComponent  "C1"
+                DstTerminal   2
+              }
             }
             Branch {
               DstComponent  "Vm1"
@@ -1301,7 +1354,31 @@ Plecs {
         Value         "load_model"
         Show          off
       }
+      MaskProbe {
+        Name          "Voltage"
+        Probe {
+          Component     "Vm1"
+          Path          "cpl"
+          Signals       {"Measured voltage"}
+        }
+      }
+      MaskProbe {
+        Name          "Current"
+        Probe {
+          Component     "I"
+          Path          "cpl"
+          Signals       {"Source current"}
+        }
+      }
+      MaskProbe {
+        Name          "Power"
+        Probe {
+          Component     "I"
+          Path          "cpl"
+          Signals       {"Source power"}
+        }
+      }
     }
   }
 }
-DemoSignature "YtPqekLAOc4Xj/yPywt6UrVaX2Z+tqvhS3KbvULC6rs="
+DemoSignature "E7n9XDIkBy1ykzSr2o4rPPAflJ41Zzh1zjTjENrwrC4="
