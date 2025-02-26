@@ -94,7 +94,7 @@ Plecs {
       }
       Parameter {
         Variable      "C_out"
-        Prompt        "Output capacitor (C)"
+        Prompt        "Output capacitor (F)"
         Type          FreeText
         Value         "Co"
         Show          off
@@ -170,6 +170,24 @@ Plecs {
         Prompt        "CPL bandwidth (Hz)"
         Type          FreeText
         Value         "fc_cpl"
+        Show          off
+        Tunable       off
+        TabName       "Load"
+      }
+      Parameter {
+        Variable      "C_cpl"
+        Prompt        "CPL input capacitance (F)"
+        Type          FreeText
+        Value         "C_cpl"
+        Show          off
+        Tunable       off
+        TabName       "Load"
+      }
+      Parameter {
+        Variable      "V_ini_cpl"
+        Prompt        "CPL initial voltage (V)"
+        Type          FreeText
+        Value         "V_ini_cpl"
         Show          off
         Tunable       off
         TabName       "Load"
@@ -1916,6 +1934,16 @@ Plecs {
             Parameter {
               Variable      "fc"
               Value         "fc"
+              Show          off
+            }
+            Parameter {
+              Variable      "C_cpl"
+              Value         "C_cpl"
+              Show          off
+            }
+            Parameter {
+              Variable      "V_cpl_ini"
+              Value         "V_ini_cpl"
               Show          off
             }
             Parameter {
@@ -5534,6 +5562,16 @@ Plecs {
             Parameter {
               Variable      "fc"
               Value         "fc"
+              Show          off
+            }
+            Parameter {
+              Variable      "C_cpl"
+              Value         ""
+              Show          off
+            }
+            Parameter {
+              Variable      "V_cpl_ini"
+              Value         ""
               Show          off
             }
             Parameter {
