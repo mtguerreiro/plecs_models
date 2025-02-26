@@ -78,7 +78,7 @@ Plecs {
 "kv = 2 * zeta * wn;\n"
 "\n"
 "Ts_i = Ts_v / 10;\n"
-"a = 4 / Ts_i;"
+"a = 2.2 / Ts_i;"
       Parameter {
         Variable      "Vo_init"
         Prompt        "Initial output voltage (V)"
@@ -1379,4 +1379,4 @@ Plecs {
     }
   }
 }
-DemoSignature "UvyO0bDjFRhts6+ZRhqJFh3OOoWI5RGl47CCOSZDaHc="
+DemoSignature "ZWYJ/jH3CQeeNi4MrsbfqrYO8ltzSg7211gHgx3CtYk="
