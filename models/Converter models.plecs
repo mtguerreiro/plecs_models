@@ -245,7 +245,7 @@ Plecs {
         Direction     left
       }
       Schematic {
-        Location      [708, 93; 1920, 957]
+        Location      [564, 82; 1776, 946]
         ZoomFactor    0.87385
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -367,7 +367,7 @@ Plecs {
           Frame         [-20, -10; 20, 10]
           Parameter {
             Variable      "f(u)"
-            Value         "u[1] / ((1/2) * (C_sc/2) * (V_sc_max^2)) * 100"
+            Value         "u[1] / ( 1/2 * C_sc * V_sc_max^2 ) * 100"
             Show          off
           }
         }
@@ -382,7 +382,7 @@ Plecs {
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
-            Value         "(1/2) * C_sc * (V_sc_ref^2)"
+            Value         "1/2 * C_sc * V_sc_ref^2"
             Show          off
           }
           Parameter {
@@ -421,7 +421,7 @@ Plecs {
           Probe {
             Component     "Converter"
             Path          "SC\\nunit"
-            Signals       {"Converter current", "Voltage"}
+            Signals       {"Converter current (A)", "Voltage (V)"}
           }
         }
         Component {
@@ -602,7 +602,7 @@ Plecs {
           Frame         [-20, -10; 20, 10]
           Parameter {
             Variable      "f(u)"
-            Value         "u[1] / ((1/2) * (C_sc/2) * (V_sc_max^2)) * 100"
+            Value         "u[1] / ( 1/2 * C_sc * V_sc_max^2 ) * 100"
             Show          off
           }
         }
@@ -690,6 +690,11 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          Probe {
+            Component     "SC SoE\ncontroller"
+            Path          "SC\\nunit"
+            Signals       {"Supercapacitor energy (J)"}
+          }
         }
         Component {
           Type          Goto
@@ -817,16 +822,6 @@ Plecs {
             Show          off
           }
           Parameter {
-            Variable      "V_max"
-            Value         "V_sc_max"
-            Show          off
-          }
-          Parameter {
-            Variable      "V_ref"
-            Value         "V_sc_ref"
-            Show          off
-          }
-          Parameter {
             Variable      "V_ini"
             Value         "V_sc_ini"
             Show          off
@@ -877,13 +872,6 @@ Plecs {
           SrcComponent  "v*"
           SrcTerminal   1
           DstComponent  "Goto3"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "Constant2"
-          SrcTerminal   1
-          DstComponent  "Goto7"
           DstTerminal   1
         }
         Connection {
@@ -1022,15 +1010,37 @@ Plecs {
           DstComponent  "SC SoE\ncontroller"
           DstTerminal   4
         }
+        Connection {
+          Type          Signal
+          SrcComponent  "Constant2"
+          SrcTerminal   1
+          DstComponent  "Goto7"
+          DstTerminal   1
+        }
       }
       MaskProbe {
         Name          "Voltage (V)"
+        Probe {
+          Component     "Converter"
+          Path          ""
+          Signals       {"Voltage (V)"}
+        }
       }
       MaskProbe {
         Name          "Output current (A)"
+        Probe {
+          Component     "Converter"
+          Path          ""
+          Signals       {"Output current (A)"}
+        }
       }
       MaskProbe {
         Name          "Converter current (A)"
+        Probe {
+          Component     "Converter"
+          Path          ""
+          Signals       {"Converter current (A)"}
+        }
       }
       MaskProbe {
         Name          "SC energy reference (J)"
@@ -3323,7 +3333,7 @@ Plecs {
         Show          off
       }
       MaskProbe {
-        Name          "Voltage"
+        Name          "Voltage (V)"
         Probe {
           Component     "Vm1"
           Path          "current_controlled"
@@ -3336,7 +3346,7 @@ Plecs {
         }
       }
       MaskProbe {
-        Name          "Voltage reference"
+        Name          "Voltage reference (V)"
         Probe {
           Component     "Fcn"
           Path          "current_controlled"
@@ -3349,7 +3359,7 @@ Plecs {
         }
       }
       MaskProbe {
-        Name          "Current reference"
+        Name          "Current reference (A)"
         Probe {
           Component     "Fcn1"
           Path          "current_controlled"
@@ -3357,7 +3367,7 @@ Plecs {
         }
       }
       MaskProbe {
-        Name          "Output current"
+        Name          "Output current (A)"
         Probe {
           Component     "Am1"
           Path          "current_controlled"
@@ -3370,7 +3380,7 @@ Plecs {
         }
       }
       MaskProbe {
-        Name          "Converter current"
+        Name          "Converter current (A)"
         Probe {
           Component     "Fcn2"
           Path          "current_controlled"
@@ -3385,4 +3395,4 @@ Plecs {
     }
   }
 }
-DemoSignature "2YHzUjFnjHEYL5VkERQYov3iGYA6oY+2ddVOIDt1kuU="
+DemoSignature "bDp3EVWVGrEW3NKFnqZ0pcbuMoFRE/GAf2t7e7YQE0c="

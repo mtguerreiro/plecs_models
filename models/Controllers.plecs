@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [109, 213; 958, 601]
+    Location      [602, 217; 1451, 605]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -16612,24 +16612,6 @@ Plecs {
             TabName       ""
           }
           Parameter {
-            Variable      "V_max"
-            Prompt        "Max voltage (V)"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       ""
-          }
-          Parameter {
-            Variable      "V_ref"
-            Prompt        "Voltage reference (V)"
-            Type          FreeText
-            Value         ""
-            Show          off
-            Tunable       off
-            TabName       ""
-          }
-          Parameter {
             Variable      "V_ini"
             Prompt        "Initial voltage (V)"
             Type          FreeText
@@ -17224,7 +17206,7 @@ Plecs {
                 Direction     right
               }
               TerminalNames { "p_sc", "i_sc", "E" }
-              Location      [640, 280; 1234, 744]
+              Location      [289, 196; 883, 660]
               ZoomFactor    1
               SliderPosition [0, 0]
               ShowBrowser   off
