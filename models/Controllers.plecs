@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [1071, 238; 1920, 626]
+    Location      [109, 213; 958, 601]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -16565,7 +16565,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [879, 260; 1574, 736]
+        Location      [79, 246; 774, 722]
         ZoomFactor    1.30957
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -16574,15 +16574,16 @@ Plecs {
           Type          Subsystem
           Name          "SC SoE\ncontroller"
           Show          on
-          Position      [130, 55]
+          Position      [110, 70]
           Direction     up
           Flipped       off
           LabelPosition none
-          Frame         [-85, -25; 85, 25]
+          Frame         [-70, -35; 70, 35]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
           CodeGenTarget "Generic"
-          MaskType      "Supercapacitor SoE controller"
+          MaskType      "Supercapacitor state of energy controller"
+          MaskDescription "Supercapacitor state of energy controller"
           MaskDisplayLang "2"
           MaskIconFrame on
           MaskIconOpaque off
@@ -16596,7 +16597,16 @@ Plecs {
             Variable      "C"
             Prompt        "Supercapacitor (F)"
             Type          FreeText
-            Value         "C_sc"
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "R"
+            Prompt        "Supercapacitor ESR (Ohm)"
+            Type          FreeText
+            Value         ""
             Show          off
             Tunable       off
             TabName       ""
@@ -16605,7 +16615,7 @@ Plecs {
             Variable      "V_max"
             Prompt        "Max voltage (V)"
             Type          FreeText
-            Value         "V_sc_max"
+            Value         ""
             Show          off
             Tunable       off
             TabName       ""
@@ -16614,7 +16624,16 @@ Plecs {
             Variable      "V_ref"
             Prompt        "Voltage reference (V)"
             Type          FreeText
-            Value         "V_sc_ref"
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "V_ini"
+            Prompt        "Initial voltage (V)"
+            Type          FreeText
+            Value         ""
             Show          off
             Tunable       off
             TabName       ""
@@ -16623,7 +16642,7 @@ Plecs {
             Variable      "Ts"
             Prompt        "Settling time (s)"
             Type          FreeText
-            Value         "Ts_sc"
+            Value         ""
             Show          off
             Tunable       off
             TabName       ""
@@ -16632,7 +16651,7 @@ Plecs {
             Variable      "pct_os"
             Prompt        "Overshoot (%)"
             Type          FreeText
-            Value         "pct_os_sc"
+            Value         ""
             Show          off
             Tunable       off
             TabName       ""
@@ -16641,29 +16660,43 @@ Plecs {
             Variable      "p_v_gain"
             Prompt        "Power-to-voltage gain"
             Type          FreeText
-            Value         "p_v_gain"
+            Value         ""
+            Show          off
+            Tunable       off
+            TabName       ""
+          }
+          Parameter {
+            Variable      "supercap_model"
+            Prompt        "Supercap. model (1: power, 2: current)"
+            Type          FreeText
+            Value         ""
             Show          off
             Tunable       off
             TabName       ""
           }
           Terminal {
             Type          Input
-            Position      [-85, -10]
+            Position      [-70, -20]
             Direction     left
           }
           Terminal {
             Type          Output
-            Position      [89, 0]
+            Position      [74, 0]
             Direction     right
           }
           Terminal {
             Type          Input
-            Position      [-85, 10]
+            Position      [-70, 0]
+            Direction     left
+          }
+          Terminal {
+            Type          Input
+            Position      [-70, 20]
             Direction     left
           }
           Schematic {
-            Location      [415, 55; 1231, 582]
-            ZoomFactor    0.873846
+            Location      [882, 140; 1830, 635]
+            ZoomFactor    1
             SliderPosition [0, 0]
             ShowBrowser   off
             BrowserWidth  100
@@ -16671,7 +16704,7 @@ Plecs {
               Type          Input
               Name          "E*"
               Show          on
-              Position      [60, 80]
+              Position      [65, 35]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16690,7 +16723,7 @@ Plecs {
               Type          Output
               Name          "dv"
               Show          on
-              Position      [580, 80]
+              Position      [585, 35]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16709,7 +16742,7 @@ Plecs {
               Type          Input
               Name          "p_sc"
               Show          on
-              Position      [60, 120]
+              Position      [65, 75]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16728,7 +16761,7 @@ Plecs {
               Type          Goto
               Name          "Goto7"
               Show          off
-              Position      [110, 80]
+              Position      [115, 35]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16747,7 +16780,7 @@ Plecs {
               Type          Goto
               Name          "Goto8"
               Show          off
-              Position      [110, 120]
+              Position      [115, 75]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16766,7 +16799,7 @@ Plecs {
               Type          From
               Name          "From20"
               Show          off
-              Position      [530, 80]
+              Position      [535, 35]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16782,10 +16815,29 @@ Plecs {
               }
             }
             Component {
+              Type          Input
+              Name          "i_sc"
+              Show          on
+              Position      [65, 115]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "4"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
               Type          From
               Name          "From16"
               Show          off
-              Position      [125, 415]
+              Position      [130, 410]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16804,7 +16856,7 @@ Plecs {
               Type          From
               Name          "From19"
               Show          off
-              Position      [120, 315]
+              Position      [125, 310]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16823,7 +16875,7 @@ Plecs {
               Type          Sum
               Name          "Sum6"
               Show          off
-              Position      [160, 315]
+              Position      [165, 310]
               Direction     up
               Flipped       off
               LabelPosition south
@@ -16852,7 +16904,7 @@ Plecs {
               Type          Gain
               Name          "Gain7"
               Show          on
-              Position      [285, 320]
+              Position      [290, 315]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16881,7 +16933,7 @@ Plecs {
               Type          Integrator
               Name          "Integrator2"
               Show          on
-              Position      [230, 320]
+              Position      [235, 315]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16925,7 +16977,7 @@ Plecs {
               Type          Gain
               Name          "Gain11"
               Show          on
-              Position      [285, 415]
+              Position      [290, 410]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -16954,7 +17006,7 @@ Plecs {
               Type          Sum
               Name          "Sum4"
               Show          off
-              Position      [340, 320]
+              Position      [345, 315]
               Direction     up
               Flipped       off
               LabelPosition south
@@ -16983,7 +17035,7 @@ Plecs {
               Type          Gain
               Name          "Gain13"
               Show          on
-              Position      [285, 365]
+              Position      [290, 360]
               Direction     right
               Flipped       on
               LabelPosition south
@@ -17012,7 +17064,7 @@ Plecs {
               Type          Gain
               Name          "Gain15"
               Show          on
-              Position      [385, 320]
+              Position      [390, 315]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -17041,7 +17093,7 @@ Plecs {
               Type          Goto
               Name          "Goto11"
               Show          off
-              Position      [435, 320]
+              Position      [440, 315]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -17057,102 +17109,10 @@ Plecs {
               }
             }
             Component {
-              Type          Gain
-              Name          "Gain5"
-              Show          on
-              Position      [145, 215]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "K"
-                Value         "-1"
-                Show          off
-              }
-              Parameter {
-                Variable      "Multiplication"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataType"
-                Value         "10"
-                Show          off
-              }
-              Parameter {
-                Variable      "DataTypeOverflowMode"
-                Value         "1"
-                Show          off
-              }
-            }
-            Component {
-              Type          Integrator
-              Name          "Integrator1"
-              Show          on
-              Position      [220, 220]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "ExternalReset"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "InitialConditionSource"
-                Value         "2"
-                Show          off
-              }
-              Parameter {
-                Variable      "x0"
-                Value         "0"
-                Show          off
-              }
-              Parameter {
-                Variable      "ShowStatePort"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "EnableWrapping"
-                Value         "1"
-                Show          off
-              }
-              Parameter {
-                Variable      "UpperLimit"
-                Value         "inf"
-                Show          off
-              }
-              Parameter {
-                Variable      "LowerLimit"
-                Value         "-inf"
-                Show          off
-              }
-            }
-            Component {
-              Type          From
-              Name          "From15"
-              Show          off
-              Position      [185, 225]
-              Direction     right
-              Flipped       off
-              LabelPosition south
-              Parameter {
-                Variable      "Tag"
-                Value         "E*"
-                Show          off
-              }
-              Parameter {
-                Variable      "Visibility"
-                Value         "2"
-                Show          off
-              }
-            }
-            Component {
               Type          Goto
               Name          "Goto10"
               Show          off
-              Position      [260, 220]
+              Position      [305, 235]
               Direction     right
               Flipped       off
               LabelPosition south
@@ -17171,13 +17131,798 @@ Plecs {
               Type          From
               Name          "From17"
               Show          off
-              Position      [110, 215]
+              Position      [125, 225]
               Direction     right
               Flipped       off
               LabelPosition south
               Parameter {
                 Variable      "Tag"
                 Value         "p_sc"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+            }
+            Component {
+              Type          From
+              Name          "From18"
+              Show          off
+              Position      [125, 245]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Tag"
+                Value         "i_sc"
+                Show          off
+              }
+              Parameter {
+                Variable      "Visibility"
+                Value         "2"
+                Show          off
+              }
+            }
+            Component {
+              Type          ConfigurableSubsystem
+              Name          "Supercap\nmodel"
+              Show          on
+              Position      [215, 235]
+              Direction     up
+              Flipped       off
+              LabelPosition none
+              Frame         [-60, -20; 60, 20]
+              SampleTime    "-1"
+              CodeGenDiscretizationMethod "2"
+              CodeGenTarget "Generic"
+              MaskDisplayLang "2"
+              MaskIconFrame on
+              MaskIconOpaque off
+              MaskIconRotates on
+              Parameter {
+                Variable      "C"
+                Prompt        "Supercapacitor (F)"
+                Type          FreeText
+                Value         "C"
+                Show          off
+                Tunable       off
+                TabName       ""
+              }
+              Parameter {
+                Variable      "V_ini"
+                Prompt        "Initial voltage (V)"
+                Type          FreeText
+                Value         "V_ini"
+                Show          off
+                Tunable       off
+                TabName       ""
+              }
+              Parameter {
+                Variable      "R"
+                Prompt        "Supercapacitor ESR (Ohm)"
+                Type          FreeText
+                Value         "R"
+                Show          off
+                Tunable       off
+                TabName       ""
+              }
+              Terminal {
+                Type          Input
+                Position      [-60, -10]
+                Direction     left
+              }
+              Terminal {
+                Type          Input
+                Position      [-60, 10]
+                Direction     left
+              }
+              Terminal {
+                Type          Output
+                Position      [64, 0]
+                Direction     right
+              }
+              TerminalNames { "p_sc", "i_sc", "E" }
+              Location      [640, 280; 1234, 744]
+              ZoomFactor    1
+              SliderPosition [0, 0]
+              ShowBrowser   off
+              BrowserWidth  100
+              Configurations {
+                Name          "power_model"
+                Schematic {
+                  Component {
+                    Type          Gain
+                    Name          "Gain5"
+                    Show          on
+                    Position      [200, 180]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "K"
+                      Value         "-1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Multiplication"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataType"
+                      Value         "10"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataTypeOverflowMode"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Integrator
+                    Name          "Integrator1"
+                    Show          on
+                    Position      [255, 180]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "ExternalReset"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "InitialConditionSource"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "x0"
+                      Value         "(1/2) * C * V_ini^2"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "ShowStatePort"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "EnableWrapping"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "UpperLimit"
+                      Value         "inf"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "LowerLimit"
+                      Value         "-inf"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Input
+                    Name          "p_sc"
+                    Show          on
+                    Position      [60, 40]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Index"
+                      Value         "1"
+                      Show          on
+                    }
+                    Parameter {
+                      Variable      "Width"
+                      Value         "-1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Goto
+                    Name          "Goto8"
+                    Show          off
+                    Position      [110, 40]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "p_sc"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Input
+                    Name          "i_sc"
+                    Show          on
+                    Position      [60, 80]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Index"
+                      Value         "2"
+                      Show          on
+                    }
+                    Parameter {
+                      Variable      "Width"
+                      Value         "-1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Output
+                    Name          "E"
+                    Show          on
+                    Position      [390, 45]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Index"
+                      Value         "3"
+                      Show          on
+                    }
+                    Parameter {
+                      Variable      "Width"
+                      Value         "-1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          From
+                    Name          "From20"
+                    Show          off
+                    Position      [340, 45]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "E"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Goto
+                    Name          "Goto10"
+                    Show          off
+                    Position      [305, 180]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "E"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          From
+                    Name          "From17"
+                    Show          off
+                    Position      [160, 180]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "p_sc"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain5"
+                    SrcTerminal   2
+                    DstComponent  "Integrator1"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Integrator1"
+                    SrcTerminal   2
+                    DstComponent  "Goto10"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "p_sc"
+                    SrcTerminal   1
+                    DstComponent  "Goto8"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "From20"
+                    SrcTerminal   1
+                    DstComponent  "E"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "From17"
+                    SrcTerminal   1
+                    DstComponent  "Gain5"
+                    DstTerminal   1
+                  }
+                }
+                Name          "current_model"
+                Schematic {
+                  Component {
+                    Type          Input
+                    Name          "p_sc"
+                    Show          on
+                    Position      [60, 40]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Index"
+                      Value         "1"
+                      Show          on
+                    }
+                    Parameter {
+                      Variable      "Width"
+                      Value         "-1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Input
+                    Name          "i_sc"
+                    Show          on
+                    Position      [60, 80]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Index"
+                      Value         "2"
+                      Show          on
+                    }
+                    Parameter {
+                      Variable      "Width"
+                      Value         "-1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Output
+                    Name          "E"
+                    Show          on
+                    Position      [390, 45]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Index"
+                      Value         "3"
+                      Show          on
+                    }
+                    Parameter {
+                      Variable      "Width"
+                      Value         "-1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          From
+                    Name          "From24"
+                    Show          off
+                    Position      [95, 200]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "i_sc"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Integrator
+                    Name          "Integrator3"
+                    Show          on
+                    Position      [260, 200]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "ExternalReset"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "InitialConditionSource"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "x0"
+                      Value         "V_ini"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "ShowStatePort"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "EnableWrapping"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "UpperLimit"
+                      Value         "inf"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "LowerLimit"
+                      Value         "-inf"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Gain
+                    Name          "Gain2"
+                    Show          on
+                    Position      [205, 200]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "K"
+                      Value         "1/C"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Multiplication"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataType"
+                      Value         "11"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataTypeOverflowMode"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Gain
+                    Name          "Gain10"
+                    Show          on
+                    Position      [205, 260]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "K"
+                      Value         "R"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Multiplication"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataType"
+                      Value         "11"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataTypeOverflowMode"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Sum
+                    Name          "Sum7"
+                    Show          off
+                    Position      [305, 200]
+                    Direction     up
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "IconShape"
+                      Value         "2"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Inputs"
+                      Value         "|+-"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataType"
+                      Value         "11"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataTypeOverflowMode"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Math
+                    Name          "Math2"
+                    Show          on
+                    Position      [355, 200]
+                    Direction     up
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Operator"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Gain
+                    Name          "Gain16"
+                    Show          on
+                    Position      [415, 200]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "K"
+                      Value         "C/2"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Multiplication"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataType"
+                      Value         "10"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataTypeOverflowMode"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Goto
+                    Name          "Goto9"
+                    Show          off
+                    Position      [460, 200]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "E"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Gain
+                    Name          "Gain17"
+                    Show          on
+                    Position      [150, 200]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "K"
+                      Value         "-1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Multiplication"
+                      Value         "1"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataType"
+                      Value         "11"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataTypeOverflowMode"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Goto
+                    Name          "Goto10"
+                    Show          off
+                    Position      [110, 80]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "i_sc"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          From
+                    Name          "From20"
+                    Show          off
+                    Position      [340, 45]
+                    Direction     right
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "E"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
+                      Show          off
+                    }
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain2"
+                    SrcTerminal   2
+                    DstComponent  "Integrator3"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Integrator3"
+                    SrcTerminal   2
+                    DstComponent  "Sum7"
+                    DstTerminal   2
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Math2"
+                    SrcTerminal   1
+                    DstComponent  "Gain16"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Sum7"
+                    SrcTerminal   1
+                    DstComponent  "Math2"
+                    DstTerminal   2
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain10"
+                    SrcTerminal   2
+                    Points        [305, 260]
+                    DstComponent  "Sum7"
+                    DstTerminal   3
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain17"
+                    SrcTerminal   2
+                    DstComponent  "Gain2"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "From24"
+                    SrcTerminal   1
+                    Points        [115, 200]
+                    Branch {
+                      DstComponent  "Gain17"
+                      DstTerminal   1
+                    }
+                    Branch {
+                      Points        [115, 260]
+                      DstComponent  "Gain10"
+                      DstTerminal   1
+                    }
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain16"
+                    SrcTerminal   2
+                    DstComponent  "Goto9"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "i_sc"
+                    SrcTerminal   1
+                    DstComponent  "Goto10"
+                    DstTerminal   1
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "From20"
+                    SrcTerminal   1
+                    DstComponent  "E"
+                    DstTerminal   1
+                  }
+                }
+              }
+              Parameter {
+                Variable      "Configuration"
+                Value         "supercap_model"
+                Show          off
+              }
+              MaskProbe {
+                Name          "Supercapacitor energy (J)"
+                Probe {
+                  Component     "Integrator1"
+                  Path          "power_model"
+                  Signals       {"State"}
+                }
+                Probe {
+                  Component     "Gain16"
+                  Path          "current_model"
+                  Signals       {"Output"}
+                }
+              }
+            }
+            Component {
+              Type          Goto
+              Name          "Goto9"
+              Show          off
+              Position      [115, 115]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Tag"
+                Value         "i_sc"
                 Show          off
               }
               Parameter {
@@ -17232,7 +17977,7 @@ Plecs {
               Type          Signal
               SrcComponent  "From16"
               SrcTerminal   1
-              Points        [160, 415]
+              Points        [165, 410]
               Branch {
                 DstComponent  "Sum6"
                 DstTerminal   3
@@ -17246,7 +17991,7 @@ Plecs {
               Type          Signal
               SrcComponent  "Gain11"
               SrcTerminal   2
-              Points        [340, 415; 340, 365]
+              Points        [345, 410; 345, 360]
               Branch {
                 DstComponent  "Sum4"
                 DstTerminal   3
@@ -17260,7 +18005,7 @@ Plecs {
               Type          Signal
               SrcComponent  "Gain13"
               SrcTerminal   2
-              Points        [200, 365]
+              Points        [205, 360]
               DstComponent  "Integrator2"
               DstTerminal   3
             }
@@ -17287,39 +18032,39 @@ Plecs {
             }
             Connection {
               Type          Signal
+              SrcComponent  "From18"
+              SrcTerminal   1
+              DstComponent  "Supercap\nmodel"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Supercap\nmodel"
+              SrcTerminal   3
+              DstComponent  "Goto10"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
               SrcComponent  "From17"
               SrcTerminal   1
-              DstComponent  "Gain5"
+              DstComponent  "Supercap\nmodel"
               DstTerminal   1
             }
             Connection {
               Type          Signal
-              SrcComponent  "From15"
+              SrcComponent  "i_sc"
               SrcTerminal   1
-              DstComponent  "Integrator1"
-              DstTerminal   3
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Gain5"
-              SrcTerminal   2
-              DstComponent  "Integrator1"
-              DstTerminal   1
-            }
-            Connection {
-              Type          Signal
-              SrcComponent  "Integrator1"
-              SrcTerminal   2
-              DstComponent  "Goto10"
+              DstComponent  "Goto9"
               DstTerminal   1
             }
           }
           MaskProbe {
             Name          "Supercapacitor energy (J)"
             Probe {
-              Component     "Integrator1"
+              Component     "Supercap\nmodel"
               Path          ""
-              Signals       {"State"}
+              Signals       {"Supercapacitor energy (J)"}
             }
           }
         }
