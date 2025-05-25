@@ -2394,6 +2394,24 @@ Plecs {
         Tunable       off
         TabName       "Load"
       }
+      Parameter {
+        Variable      "V_ini_cpl"
+        Prompt        "CPL initial voltage"
+        Type          FreeText
+        Value         "V_ini_cpl"
+        Show          off
+        Tunable       off
+        TabName       "Load"
+      }
+      Parameter {
+        Variable      "C_cpl"
+        Prompt        "CPL input capacitance"
+        Type          FreeText
+        Value         "C_cpl"
+        Show          off
+        Tunable       off
+        TabName       "Load"
+      }
       Terminal {
         Type          Input
         Position      [-55, -10]
@@ -2440,7 +2458,7 @@ Plecs {
         Direction     right
       }
       TerminalNames { "d", "i1", "vo", "v_in", "i2", "po", "io", "v2", "v1" }
-      Location      [2361, 241; 3711, 942]
+      Location      [383, 178; 1733, 879]
       ZoomFactor    1
       SliderPosition [0, 0]
       ShowBrowser   off
@@ -5566,12 +5584,12 @@ Plecs {
             }
             Parameter {
               Variable      "C_cpl"
-              Value         ""
+              Value         "C_cpl"
               Show          off
             }
             Parameter {
               Variable      "V_cpl_ini"
-              Value         ""
+              Value         "V_ini_cpl"
               Show          off
             }
             Parameter {

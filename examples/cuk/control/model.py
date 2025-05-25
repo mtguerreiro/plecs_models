@@ -58,6 +58,8 @@ def plant_params():
     
     V_cpl_thres = 15
     fc_cpl = 100e3
+    V_ini_cpl = Vo_ini
+    C_cpl = 1e-6
 
     _params = {}
 
@@ -91,7 +93,9 @@ def plant_params():
 
     _params['fc_cpl'] = fc_cpl
     _params['V_cpl_thres'] = V_cpl_thres
-    
+    _params['V_ini_cpl'] = V_ini_cpl
+    _params['C_cpl'] = C_cpl
+
     _params['cuk_model'] = 1
     _params['cuk_load_model'] = 2
     
