@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [1071, 302; 1920, 690]
+    Location      [825, 341; 1674, 729]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -97,7 +97,7 @@ Plecs {
           MaskIconOpaque off
           MaskIconRotates on
           Schematic {
-            Location      [2576, 146; 3212, 782]
+            Location      [1284, 146; 1920, 782]
             ZoomFactor    1
             SliderPosition [0, 0]
             ShowBrowser   off
@@ -198,7 +198,7 @@ Plecs {
                 Direction     left
               }
               TerminalNames { "u", "vo", "il", "vo*", "v_in", "io" }
-              Location      [2371, 78; 3329, 1007]
+              Location      [962, 28; 1920, 864]
               ZoomFactor    1
               SliderPosition [0, 0]
               ShowBrowser   off
@@ -7590,7 +7590,7 @@ Plecs {
           MaskIconOpaque off
           MaskIconRotates on
           Schematic {
-            Location      [2674, 291; 3369, 767]
+            Location      [1225, 291; 1920, 767]
             ZoomFactor    1.30957
             SliderPosition [0, 0]
             ShowBrowser   off
@@ -17964,7 +17964,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [415, 55; 707, 286]
+        Location      [1017, 323; 1309, 554]
         ZoomFactor    0.667275
         SliderPosition [0, 0]
         ShowBrowser   off
@@ -18157,7 +18157,7 @@ Plecs {
             Direction     left
           }
           Schematic {
-            Location      [564, 29; 1776, 893]
+            Location      [684, 29; 1896, 893]
             ZoomFactor    0.87385
             SliderPosition [0, 0]
             ShowBrowser   off
@@ -18333,7 +18333,7 @@ Plecs {
               Probe {
                 Component     "Converter"
                 Path          "Converter models/SC\\nunit"
-                Signals       {"Converter current (A)", "Voltage (V)"}
+                Signals       {"Voltage (V)", "Converter current (A)"}
               }
             }
             Component {
@@ -18648,7 +18648,7 @@ Plecs {
             }
             Component {
               Type          Reference
-              SrcComponent  "Converter models/Converter"
+              SrcComponent  "PE Lib/Converter models/Converter"
               Name          "Converter"
               Show          on
               Position      [775, 285]
@@ -18714,8 +18714,8 @@ Plecs {
             }
             Component {
               Type          Reference
-              SrcComponent  "Controllers/Supercapacitor controllers/SC SoE\\nc"
-"ontroller"
+              SrcComponent  "PE Lib/Controllers/Supercapacitor controllers/SC "
+"SoE\\ncontroller"
               Name          "SC SoE\ncontroller"
               Show          on
               Position      [420, 295]
@@ -19100,7 +19100,7 @@ Plecs {
             Direction     left
           }
           TerminalNames { "1", "2", "v*" }
-          Location      [492, 31; 1920, 763]
+          Location      [224, 74; 1652, 806]
           ZoomFactor    1
           SliderPosition [0, 0]
           ShowBrowser   off
@@ -23947,7 +23947,7 @@ Plecs {
               }
               Component {
                 Type          Reference
-                SrcComponent  "Load models/Virtual load\\nmodel"
+                SrcComponent  "PE Lib/Load  models/Virtual load\\nmodel"
                 Name          "Virtual load\nmodel"
                 Show          on
                 Position      [330, 500]
@@ -24841,7 +24841,7 @@ Plecs {
               }
               Component {
                 Type          Reference
-                SrcComponent  "Load models/Load\\nmodel"
+                SrcComponent  "PE Lib/Load  models/Load\\nmodel"
                 Name          "Load\nmodel"
                 Show          on
                 Position      [680, 390]
@@ -25386,7 +25386,7 @@ Plecs {
             Direction     right
           }
           TerminalNames { "d", "i1", "vo", "v_in", "i2", "po", "io", "v2", "v1" }
-          Location      [383, 178; 1733, 879]
+          Location      [383, 163; 1733, 864]
           ZoomFactor    1
           SliderPosition [0, 0]
           ShowBrowser   off
@@ -25650,47 +25650,6 @@ Plecs {
                   Variable      "Visibility"
                   Value         "2"
                   Show          off
-                }
-              }
-              Component {
-                Type          Reference
-                SrcComponent  "Load models/Virtual load\\nmodel"
-                Name          "Virtual load\nmodel"
-                Show          on
-                Position      [215, 1055]
-                Direction     up
-                Flipped       off
-                LabelPosition none
-                Frame         [-55, -20; 55, 20]
-                Parameter {
-                  Variable      "R_load"
-                  Value         "R_load"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "v_thres"
-                  Value         "v_thres"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "load_model"
-                  Show          off
-                }
-                Terminal {
-                  Type          Output
-                  Position      [59, 0]
-                  Direction     right
-                }
-                Terminal {
-                  Type          Input
-                  Position      [-55, 10]
-                  Direction     left
-                }
-                Terminal {
-                  Type          Input
-                  Position      [-55, -10]
-                  Direction     left
                 }
               }
               Component {
@@ -27216,6 +27175,47 @@ Plecs {
                   Show          off
                 }
               }
+              Component {
+                Type          Reference
+                SrcComponent  "PE Lib/Load  models/Virtual load\\nmodel"
+                Name          "Virtual load\nmodel"
+                Show          on
+                Position      [215, 1055]
+                Direction     up
+                Flipped       off
+                LabelPosition none
+                Frame         [-55, -20; 55, 20]
+                Parameter {
+                  Variable      "R_load"
+                  Value         "R_load"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "v_thres"
+                  Value         "v_thres"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "load_model"
+                  Show          off
+                }
+                Terminal {
+                  Type          Output
+                  Position      [59, 0]
+                  Direction     right
+                }
+                Terminal {
+                  Type          Input
+                  Position      [-55, 10]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Input
+                  Position      [-55, -10]
+                  Direction     left
+                }
+              }
               Connection {
                 Type          Signal
                 SrcComponent  "Constant"
@@ -28486,62 +28486,6 @@ Plecs {
                 }
               }
               Component {
-                Type          Reference
-                SrcComponent  "Load models/Load\\nmodel"
-                Name          "Load\nmodel"
-                Show          on
-                Position      [905, 520]
-                Direction     up
-                Flipped       off
-                LabelPosition none
-                Frame         [-40, -40; 40, 40]
-                Parameter {
-                  Variable      "R_load"
-                  Value         "R_load"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "v_thres"
-                  Value         "v_thres"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "fc"
-                  Value         "fc"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "C_cpl"
-                  Value         "C_cpl"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "V_cpl_ini"
-                  Value         "V_ini_cpl"
-                  Show          off
-                }
-                Parameter {
-                  Variable      "Configuration"
-                  Value         "load_model"
-                  Show          off
-                }
-                Terminal {
-                  Type          Port
-                  Position      [-45, 20]
-                  Direction     left
-                }
-                Terminal {
-                  Type          Port
-                  Position      [-45, -20]
-                  Direction     left
-                }
-                Terminal {
-                  Type          Input
-                  Position      [40, -20]
-                  Direction     right
-                }
-              }
-              Component {
                 Type          From
                 Name          "From11"
                 Show          off
@@ -28708,6 +28652,62 @@ Plecs {
                   Variable      "Visibility"
                   Value         "2"
                   Show          off
+                }
+              }
+              Component {
+                Type          Reference
+                SrcComponent  "PE Lib/Load  models/Load\\nmodel"
+                Name          "Load\nmodel"
+                Show          on
+                Position      [905, 520]
+                Direction     up
+                Flipped       off
+                LabelPosition none
+                Frame         [-40, -40; 40, 40]
+                Parameter {
+                  Variable      "R_load"
+                  Value         "R_load"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "v_thres"
+                  Value         "v_thres"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "fc"
+                  Value         "fc"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "C_cpl"
+                  Value         "C_cpl"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "V_cpl_ini"
+                  Value         "V_ini_cpl"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Configuration"
+                  Value         "load_model"
+                  Show          off
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-45, 20]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Port
+                  Position      [-45, -20]
+                  Direction     left
+                }
+                Terminal {
+                  Type          Input
+                  Position      [40, -20]
+                  Direction     right
                 }
               }
               Connection {
@@ -29090,4 +29090,4 @@ Plecs {
     }
   }
 }
-DemoSignature "YOw3sT3WZCnstwn78JmSJNgdx6E27wyS+G/3WMPVBzk="
+DemoSignature "1gNoo5inhxWzr/IfSva50Mqzpor5xOk4Y+RkNyatZns="
