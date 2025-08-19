@@ -17966,7 +17966,7 @@ Plecs {
       Schematic {
         Location      [1017, 323; 1309, 554]
         ZoomFactor    0.667275
-        SliderPosition [0, 0]
+        SliderPosition [5, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -25278,12 +25278,21 @@ Plecs {
           }
           Parameter {
             Variable      "nt"
-            Prompt        "Transformer's turn ration (N2/N1)"
+            Prompt        "Transformer's turn ratio (N2/N1)"
             Type          FreeText
             Value         "nt"
             Show          off
             Tunable       off
             TabName       "General"
+          }
+          Parameter {
+            Variable      "Lt_mag"
+            Prompt        "Transformer's magnetizing inductance"
+            Type          FreeText
+            Value         "Lt_mag"
+            Show          off
+            Tunable       off
+            TabName       "Switched model"
           }
           Parameter {
             Variable      "load_model"
@@ -28200,7 +28209,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "Lm"
-                  Value         "inf"
+                  Value         "Lt_mag"
                   Show          off
                 }
                 Parameter {
@@ -29090,4 +29099,4 @@ Plecs {
     }
   }
 }
-DemoSignature "1gNoo5inhxWzr/IfSva50Mqzpor5xOk4Y+RkNyatZns="
+DemoSignature "MOOoslDsVQalnZGWD0yGmcIbPBx2XCHf6OH8NvpCURo="
