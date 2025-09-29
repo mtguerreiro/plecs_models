@@ -23021,6 +23021,15 @@ Plecs {
             TabName       "Switched model"
           }
           Parameter {
+            Variable      "I_L_ini"
+            Prompt        "Inductor initial current (A)"
+            Type          FreeText
+            Value         "I_L_ini"
+            Show          off
+            Tunable       off
+            TabName       "General"
+          }
+          Parameter {
             Variable      "C_out"
             Prompt        "Output capacitor (F)"
             Type          FreeText
@@ -23369,7 +23378,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "x0"
-                  Value         "0"
+                  Value         "I_L_ini"
                   Show          off
                 }
                 Parameter {
@@ -24679,7 +24688,7 @@ Plecs {
                 }
                 Parameter {
                   Variable      "i_init"
-                  Value         "0"
+                  Value         "I_L_ini"
                   Show          off
                 }
               }
@@ -29099,4 +29108,3 @@ Plecs {
     }
   }
 }
-DemoSignature "MOOoslDsVQalnZGWD0yGmcIbPBx2XCHf6OH8NvpCURo="
