@@ -27,7 +27,7 @@ def casc_fblin_params(design_params, plant_params, prefix=''):
     Co = plant_params['Co']
 
     k_ei, kv, k_ev = pyctl.design.pe.cuk.casc_fblin(
-        t_settling, os, L, C, alpha=alpha
+        t_settling, os, Li, Co, alpha=alpha
         )
 
     _params = {

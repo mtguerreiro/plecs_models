@@ -189,7 +189,7 @@ Plecs {
                 Direction     left
               }
               TerminalNames { "u", "vo", "il", "vo*", "v_in", "io" }
-              Location      [2265, 153; 3223, 989]
+              Location      [50, 152; 1008, 988]
               ZoomFactor    1
               SliderPosition [0, 0]
               ShowBrowser   off
@@ -16305,7 +16305,7 @@ Plecs {
               }
               TerminalNames { "v_in", "d", "i1", "i2", "v1", "vo", "io", "vo*", ""
 "v2" }
-              Location      [2261, 82; 3180, 887]
+              Location      [957, 153; 1876, 988]
               ZoomFactor    1
               SliderPosition [0, 0]
               ShowBrowser   off
@@ -16964,7 +16964,7 @@ Plecs {
                     Type          Sum
                     Name          "Sum3"
                     Show          off
-                    Position      [485, 590]
+                    Position      [520, 590]
                     Direction     up
                     Flipped       off
                     LabelPosition south
@@ -16993,7 +16993,7 @@ Plecs {
                     Type          From
                     Name          "From86"
                     Show          off
-                    Position      [485, 555]
+                    Position      [520, 555]
                     Direction     down
                     Flipped       off
                     LabelPosition west
@@ -17012,7 +17012,7 @@ Plecs {
                     Type          From
                     Name          "From87"
                     Show          off
-                    Position      [485, 630]
+                    Position      [520, 630]
                     Direction     up
                     Flipped       off
                     LabelPosition east
@@ -17031,7 +17031,7 @@ Plecs {
                     Type          Product
                     Name          "Divide"
                     Show          off
-                    Position      [535, 590]
+                    Position      [580, 590]
                     Direction     up
                     Flipped       off
                     LabelPosition south
@@ -17060,7 +17060,7 @@ Plecs {
                     Type          Goto
                     Name          "Goto47"
                     Show          off
-                    Position      [575, 590]
+                    Position      [630, 590]
                     Direction     right
                     Flipped       off
                     LabelPosition south
@@ -17079,7 +17079,7 @@ Plecs {
                     Type          From
                     Name          "From55"
                     Show          off
-                    Position      [95, 580]
+                    Position      [65, 585]
                     Direction     right
                     Flipped       off
                     LabelPosition south
@@ -17098,7 +17098,7 @@ Plecs {
                     Type          From
                     Name          "From56"
                     Show          off
-                    Position      [375, 630]
+                    Position      [415, 630]
                     Direction     up
                     Flipped       off
                     LabelPosition east
@@ -17117,7 +17117,7 @@ Plecs {
                     Type          Gain
                     Name          "Gain2"
                     Show          on
-                    Position      [425, 590]
+                    Position      [465, 590]
                     Direction     right
                     Flipped       off
                     LabelPosition south
@@ -17146,7 +17146,7 @@ Plecs {
                     Type          Sum
                     Name          "Sum4"
                     Show          off
-                    Position      [375, 590]
+                    Position      [415, 590]
                     Direction     up
                     Flipped       off
                     LabelPosition south
@@ -17277,7 +17277,7 @@ Plecs {
                     Type          Sum
                     Name          "Sum5"
                     Show          off
-                    Position      [140, 585]
+                    Position      [125, 585]
                     Direction     up
                     Flipped       off
                     LabelPosition south
@@ -17306,7 +17306,7 @@ Plecs {
                     Type          From
                     Name          "From57"
                     Show          off
-                    Position      [95, 620]
+                    Position      [65, 625]
                     Direction     right
                     Flipped       off
                     LabelPosition south
@@ -17376,6 +17376,54 @@ Plecs {
                     Parameter {
                       Variable      "DataTypeOverflowMode"
                       Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          Product
+                    Name          "Product2"
+                    Show          off
+                    Position      [370, 590]
+                    Direction     up
+                    Flipped       off
+                    LabelPosition south
+                    Parameter {
+                      Variable      "IconShape"
+                      Value         "2"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Inputs"
+                      Value         "**/"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataType"
+                      Value         "10"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "DataTypeOverflowMode"
+                      Value         "1"
+                      Show          off
+                    }
+                  }
+                  Component {
+                    Type          From
+                    Name          "From88"
+                    Show          off
+                    Position      [370, 630]
+                    Direction     up
+                    Flipped       off
+                    LabelPosition east
+                    Parameter {
+                      Variable      "Tag"
+                      Value         "v_in"
+                      Show          off
+                    }
+                    Parameter {
+                      Variable      "Visibility"
+                      Value         "2"
                       Show          off
                     }
                   }
@@ -17524,7 +17572,7 @@ Plecs {
                     Type          Signal
                     SrcComponent  "From87"
                     SrcTerminal   1
-                    Points        [485, 615]
+                    Points        [520, 615]
                     Branch {
                       DstComponent  "Sum3"
                       DstTerminal   4
@@ -17571,19 +17619,11 @@ Plecs {
                   }
                   Connection {
                     Type          Signal
-                    SrcComponent  "From55"
-                    SrcTerminal   1
-                    Points        [110, 580; 110, 585]
-                    DstComponent  "Sum5"
-                    DstTerminal   2
-                  }
-                  Connection {
-                    Type          Signal
                     SrcComponent  "From57"
                     SrcTerminal   1
-                    Points        [125, 620; 125, 625; 140, 625]
+                    Points        [125, 625]
                     Branch {
-                      Points        [140, 685]
+                      Points        [125, 685]
                       DstComponent  "Gain4"
                       DstTerminal   1
                     }
@@ -17591,13 +17631,6 @@ Plecs {
                       DstComponent  "Sum5"
                       DstTerminal   3
                     }
-                  }
-                  Connection {
-                    Type          Signal
-                    SrcComponent  "Sum"
-                    SrcTerminal   1
-                    DstComponent  "Sum4"
-                    DstTerminal   2
                   }
                   Connection {
                     Type          Signal
@@ -17627,6 +17660,42 @@ Plecs {
                     Points        [165, 645]
                     DstComponent  "Integrator"
                     DstTerminal   3
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "From88"
+                    SrcTerminal   1
+                    DstComponent  "Product2"
+                    DstTerminal   4
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "From55"
+                    SrcTerminal   1
+                    Points        [85, 585]
+                    Branch {
+                      DstComponent  "Sum5"
+                      DstTerminal   2
+                    }
+                    Branch {
+                      Points        [85, 550; 370, 550]
+                      DstComponent  "Product2"
+                      DstTerminal   2
+                    }
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Sum"
+                    SrcTerminal   1
+                    DstComponent  "Product2"
+                    DstTerminal   3
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Product2"
+                    SrcTerminal   1
+                    DstComponent  "Sum4"
+                    DstTerminal   2
                   }
                   Connection {
                     Type          Signal
