@@ -26,12 +26,12 @@ def casc_fblin_params(design_params, plant_params, prefix=''):
     L = plant_params['L']
     C = plant_params['Co']
 
-    ki, k_ei, kv, k_ev = pyctl.design.pe.boost.casc_fblin(
+    k_ei, kv, k_ev = pyctl.design.pe.boost.casc_fblin(
         t_settling, os, L, C, alpha=alpha
         )
 
     _params = {
-        'k_ei': k_ei, 'ki': ki, 'k_ev': k_ev, 'kv': kv,
+        'k_ei': k_ei, 'k_ev': k_ev, 'kv': kv,
         'model': model, 'ts': ts
     }
 
