@@ -16240,6 +16240,24 @@ Plecs {
                 Tunable       off
                 TabName       ""
               }
+              Parameter {
+                Variable      "k_ev"
+                Prompt        "Voltage error gain"
+                Type          FreeText
+                Value         ""
+                Show          off
+                Tunable       off
+                TabName       ""
+              }
+              Parameter {
+                Variable      "kv"
+                Prompt        "Voltage gain"
+                Type          FreeText
+                Value         ""
+                Show          off
+                Tunable       off
+                TabName       ""
+              }
               Terminal {
                 Type          Input
                 Position      [-55, -70]
@@ -16287,7 +16305,7 @@ Plecs {
               }
               TerminalNames { "v_in", "d", "i1", "i2", "v1", "vo", "io", "vo*", ""
 "v2" }
-              Location      [1001, 101; 1920, 906]
+              Location      [2261, 82; 3180, 887]
               ZoomFactor    1
               SliderPosition [0, 0]
               ShowBrowser   off
@@ -16943,39 +16961,10 @@ Plecs {
                     }
                   }
                   Component {
-                    Type          Gain
-                    Name          "Gain1"
-                    Show          on
-                    Position      [485, 590]
-                    Direction     right
-                    Flipped       off
-                    LabelPosition south
-                    Parameter {
-                      Variable      "K"
-                      Value         "Li"
-                      Show          off
-                    }
-                    Parameter {
-                      Variable      "Multiplication"
-                      Value         "1"
-                      Show          off
-                    }
-                    Parameter {
-                      Variable      "DataType"
-                      Value         "11"
-                      Show          off
-                    }
-                    Parameter {
-                      Variable      "DataTypeOverflowMode"
-                      Value         "1"
-                      Show          off
-                    }
-                  }
-                  Component {
                     Type          Sum
                     Name          "Sum3"
                     Show          off
-                    Position      [535, 590]
+                    Position      [485, 590]
                     Direction     up
                     Flipped       off
                     LabelPosition south
@@ -17004,7 +16993,7 @@ Plecs {
                     Type          From
                     Name          "From86"
                     Show          off
-                    Position      [535, 555]
+                    Position      [485, 555]
                     Direction     down
                     Flipped       off
                     LabelPosition west
@@ -17023,7 +17012,7 @@ Plecs {
                     Type          From
                     Name          "From87"
                     Show          off
-                    Position      [535, 630]
+                    Position      [485, 630]
                     Direction     up
                     Flipped       off
                     LabelPosition east
@@ -17042,7 +17031,7 @@ Plecs {
                     Type          Product
                     Name          "Divide"
                     Show          off
-                    Position      [595, 590]
+                    Position      [535, 590]
                     Direction     up
                     Flipped       off
                     LabelPosition south
@@ -17071,7 +17060,7 @@ Plecs {
                     Type          Goto
                     Name          "Goto47"
                     Show          off
-                    Position      [645, 590]
+                    Position      [575, 590]
                     Direction     right
                     Flipped       off
                     LabelPosition south
@@ -17090,7 +17079,7 @@ Plecs {
                     Type          From
                     Name          "From55"
                     Show          off
-                    Position      [65, 585]
+                    Position      [95, 580]
                     Direction     right
                     Flipped       off
                     LabelPosition south
@@ -17288,7 +17277,7 @@ Plecs {
                     Type          Sum
                     Name          "Sum5"
                     Show          off
-                    Position      [125, 585]
+                    Position      [140, 585]
                     Direction     up
                     Flipped       off
                     LabelPosition south
@@ -17317,7 +17306,7 @@ Plecs {
                     Type          From
                     Name          "From57"
                     Show          off
-                    Position      [65, 625]
+                    Position      [95, 620]
                     Direction     right
                     Flipped       off
                     LabelPosition south
@@ -17535,7 +17524,7 @@ Plecs {
                     Type          Signal
                     SrcComponent  "From87"
                     SrcTerminal   1
-                    Points        [535, 615]
+                    Points        [485, 615]
                     Branch {
                       DstComponent  "Sum3"
                       DstTerminal   4
@@ -17547,23 +17536,9 @@ Plecs {
                   }
                   Connection {
                     Type          Signal
-                    SrcComponent  "Gain1"
-                    SrcTerminal   2
-                    DstComponent  "Sum3"
-                    DstTerminal   3
-                  }
-                  Connection {
-                    Type          Signal
                     SrcComponent  "Divide"
                     SrcTerminal   1
                     DstComponent  "Goto47"
-                    DstTerminal   1
-                  }
-                  Connection {
-                    Type          Signal
-                    SrcComponent  "Gain2"
-                    SrcTerminal   2
-                    DstComponent  "Gain1"
                     DstTerminal   1
                   }
                   Connection {
@@ -17598,6 +17573,7 @@ Plecs {
                     Type          Signal
                     SrcComponent  "From55"
                     SrcTerminal   1
+                    Points        [110, 580; 110, 585]
                     DstComponent  "Sum5"
                     DstTerminal   2
                   }
@@ -17605,9 +17581,9 @@ Plecs {
                     Type          Signal
                     SrcComponent  "From57"
                     SrcTerminal   1
-                    Points        [125, 625]
+                    Points        [125, 620; 125, 625; 140, 625]
                     Branch {
-                      Points        [125, 685]
+                      Points        [140, 685]
                       DstComponent  "Gain4"
                       DstTerminal   1
                     }
@@ -17615,6 +17591,49 @@ Plecs {
                       DstComponent  "Sum5"
                       DstTerminal   3
                     }
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Sum"
+                    SrcTerminal   1
+                    DstComponent  "Sum4"
+                    DstTerminal   2
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain3"
+                    SrcTerminal   2
+                    DstComponent  "Sum"
+                    DstTerminal   2
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain4"
+                    SrcTerminal   2
+                    Points        [325, 685; 325, 645]
+                    Branch {
+                      DstComponent  "Sum"
+                      DstTerminal   3
+                    }
+                    Branch {
+                      DstComponent  "Gain5"
+                      DstTerminal   1
+                    }
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain5"
+                    SrcTerminal   2
+                    Points        [165, 645]
+                    DstComponent  "Integrator"
+                    DstTerminal   3
+                  }
+                  Connection {
+                    Type          Signal
+                    SrcComponent  "Gain2"
+                    SrcTerminal   2
+                    DstComponent  "Sum3"
+                    DstTerminal   3
                   }
                 }
                 Name          "discrete"
