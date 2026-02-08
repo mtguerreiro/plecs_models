@@ -40,6 +40,51 @@ def casc_fblin_params(design_params, plant_params, prefix=''):
     return params
 
 
+def lin_sfb_params(design_params, plant_params, prefix=''):
+
+    t_settling = design_params['t_settling']
+    os = design_params['os']
+    if 'alpha' in design_params:
+        alpha = design_params['alpha']
+    else:
+        alpha = 10
+
+    model = design_params['model']
+    ts = design_params['ts']
+    
+    if model == 'continuous':
+        model = 1
+    elif model == 'discrete':
+        model = 2
+    else:
+        raise TypeError('`model` should be `continuous` or `discrete`.')
+
+    L1 = plant_params['Li']
+    L2 = plant_params['Lo']
+    Cc = plant_params['Cc']
+    Co = plant_params['Co']
+    v_in = plant_params['V_in']
+    vo = plant_params['Vo_ref']
+    po = plant_params['Po_nom']
+    nt = plant_params['nt']
+    
+    K, x1_ss, x2_ss, x3_ss, x4_ss, u_ss = pyctl.design.pe.iso_cuk.lin_state_feedback(
+        t_settling, os,
+        L1, L2, Cc, Co, v_in, vo, po, nt, alpha
+        )
+
+    _params = {
+        'K': K,
+        'x1_ss': x1_ss, 'x2_ss': x2_ss, 'x3_ss': x3_ss, 'x4_ss': x4_ss,
+        'u_ss': u_ss,
+        'model': model, 'ts': ts,
+    }
+
+    params = ppm.ppm_utils.add_key_prefix_dict(_params, prefix)
+    
+    return params
+
+
 def energy_params(design_params, plant_params, prefix=''):
 
     t_settling = design_params['t_settling']
