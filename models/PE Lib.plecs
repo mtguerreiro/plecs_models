@@ -53,7 +53,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [1525, 331; 1920, 719]
+    Location      [2368, 241; 2763, 629]
     ZoomFactor    1.14436
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -30254,7 +30254,7 @@ Plecs {
       MaskIconOpaque off
       MaskIconRotates on
       Schematic {
-        Location      [1017, 323; 1309, 554]
+        Location      [1628, 251; 1920, 482]
         ZoomFactor    0.667275
         SliderPosition [5, 0]
         ShowBrowser   off
@@ -31390,7 +31390,7 @@ Plecs {
             Direction     left
           }
           TerminalNames { "1", "2", "v*" }
-          Location      [224, 74; 1652, 806]
+          Location      [2157, 145; 3552, 877]
           ZoomFactor    1
           SliderPosition [0, 0]
           ShowBrowser   off
@@ -32386,7 +32386,7 @@ Plecs {
                 Type          Port
                 Name          "1"
                 Show          on
-                Position      [1040, 265]
+                Position      [1225, 265]
                 Direction     right
                 Flipped       on
                 LabelPosition south
@@ -32405,7 +32405,7 @@ Plecs {
                 Type          Port
                 Name          "2"
                 Show          on
-                Position      [1040, 335]
+                Position      [1225, 335]
                 Direction     right
                 Flipped       on
                 LabelPosition south
@@ -32443,7 +32443,7 @@ Plecs {
                 Type          CurrentSource
                 Name          "I"
                 Show          on
-                Position      [820, 300]
+                Position      [1005, 300]
                 Direction     down
                 Flipped       on
                 LabelPosition east
@@ -32462,7 +32462,7 @@ Plecs {
                 Type          Capacitor
                 Name          "C1"
                 Show          on
-                Position      [960, 300]
+                Position      [1145, 300]
                 Direction     down
                 Flipped       on
                 LabelPosition west
@@ -32481,7 +32481,7 @@ Plecs {
                 Type          Voltmeter
                 Name          "Vm1"
                 Show          on
-                Position      [880, 300]
+                Position      [1065, 300]
                 Direction     up
                 Flipped       off
                 LabelPosition west
@@ -32490,7 +32490,7 @@ Plecs {
                 Type          Goto
                 Name          "Goto"
                 Show          off
-                Position      [910, 300]
+                Position      [1095, 300]
                 Direction     right
                 Flipped       off
                 LabelPosition south
@@ -32698,7 +32698,7 @@ Plecs {
                 Type          Ammeter
                 Name          "Am1"
                 Show          on
-                Position      [990, 265]
+                Position      [1175, 265]
                 Direction     left
                 Flipped       off
                 LabelPosition south
@@ -32707,7 +32707,7 @@ Plecs {
                 Type          Goto
                 Name          "Goto2"
                 Show          off
-                Position      [990, 235]
+                Position      [1175, 235]
                 Direction     up
                 Flipped       off
                 LabelPosition east
@@ -33009,7 +33009,7 @@ Plecs {
                 Type          Goto
                 Name          "Goto6"
                 Show          off
-                Position      [790, 275]
+                Position      [975, 275]
                 Direction     up
                 Flipped       off
                 LabelPosition east
@@ -33208,15 +33208,59 @@ Plecs {
                   Show          off
                 }
               }
+              Component {
+                Type          TransferFunction
+                Name          "Transfer Fcn"
+                Show          on
+                Position      [845, 300]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Frame         [-30, -15; 30, 15]
+                Parameter {
+                  Variable      "Numerator"
+                  Value         "[10*a]"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "Denominator"
+                  Value         "[1 10*a]"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "X0"
+                  Value         "0"
+                  Show          off
+                }
+              }
+              Component {
+                Type          Saturation
+                Name          "Saturation"
+                Show          on
+                Position      [910, 300]
+                Direction     right
+                Flipped       off
+                LabelPosition south
+                Parameter {
+                  Variable      "UpperLimit"
+                  Value         "I_max"
+                  Show          off
+                }
+                Parameter {
+                  Variable      "LowerLimit"
+                  Value         "I_min"
+                  Show          off
+                }
+              }
               Connection {
                 Type          Wire
                 SrcComponent  "C1"
                 SrcTerminal   2
-                Points        [960, 335]
+                Points        [1145, 335]
                 Branch {
-                  Points        [880, 335]
+                  Points        [1065, 335]
                   Branch {
-                    Points        [820, 335]
+                    Points        [1005, 335]
                     DstComponent  "I"
                     DstTerminal   1
                   }
@@ -33234,9 +33278,9 @@ Plecs {
                 Type          Wire
                 SrcComponent  "I"
                 SrcTerminal   2
-                Points        [820, 265; 880, 265]
+                Points        [1005, 265; 1065, 265]
                 Branch {
-                  Points        [960, 265]
+                  Points        [1145, 265]
                   Branch {
                     DstComponent  "C1"
                     DstTerminal   1
@@ -33390,20 +33434,6 @@ Plecs {
               }
               Connection {
                 Type          Signal
-                SrcComponent  "Product1"
-                SrcTerminal   1
-                Points        [790, 300]
-                Branch {
-                  DstComponent  "I"
-                  DstTerminal   3
-                }
-                Branch {
-                  DstComponent  "Goto6"
-                  DstTerminal   1
-                }
-              }
-              Connection {
-                Type          Signal
                 SrcComponent  "Sum1"
                 SrcTerminal   1
                 DstComponent  "Sum4"
@@ -33479,6 +33509,34 @@ Plecs {
                 DstComponent  "Fcn2"
                 DstTerminal   1
               }
+              Connection {
+                Type          Signal
+                SrcComponent  "Transfer Fcn"
+                SrcTerminal   2
+                DstComponent  "Saturation"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Product1"
+                SrcTerminal   1
+                DstComponent  "Transfer Fcn"
+                DstTerminal   1
+              }
+              Connection {
+                Type          Signal
+                SrcComponent  "Saturation"
+                SrcTerminal   2
+                Points        [975, 300]
+                Branch {
+                  DstComponent  "I"
+                  DstTerminal   3
+                }
+                Branch {
+                  DstComponent  "Goto6"
+                  DstTerminal   1
+                }
+              }
               RectangleAnnotation {
                 Position     [120, 315]
                 Width        130
@@ -33526,6 +33584,22 @@ Plecs {
                 Name          "<html><body>\n<p><span style=\" font-size:12px;"
 "\">Feedback lin.</span></p></body></html>"
                 Position      [685, 240]
+              } 
+              RectangleAnnotation {
+                Position     [870, 300]
+                Width        150
+                Height       90
+                CornerRadius 3
+                Thickness    2
+                PenColor     4292160559
+                PenAlpha     1
+                BrushColor   3181986
+                BrushAlpha   0
+              } 
+              Annotation {
+                Name          "<html><body>\n<p><span style=\" font-size:12px;"
+"\">Current controller</span></p></body></html>"
+                Position      [870, 240]
               } 
             }
           }
